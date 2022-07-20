@@ -1,0 +1,4 @@
+[submodule "SF-Tester-Design-Zynq/IP/vivado-library"]
+	path = SF-Tester-Design-Zynq/IP/vivado-library
+	url = https://github.com/timothystotts/vivado-library.git
+	branch = zybo-z7-20-vivado-2021.2
