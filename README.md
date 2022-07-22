@@ -16,7 +16,7 @@ FPGA enthusiasts may find interesting.
 ## Description
 A small FPGA project of different implementations for testing a N25Q Serial Flash.
 Status is displayed in abbreviated text on a 16x2 character LCD,
-with color-mixing two RGB LEDs,
+with color-mixing two or four RGB LEDs,
 and with displaying PASS and DONE status on two basic LEDs.
 
 The Xilinx MicroBlaze designs can now target either of two FPGA development boards produced by Digilent Inc; one being
@@ -56,7 +56,8 @@ board components, such as count of RGB LEDs.
 The folder SF-Tester-Design-VHDL contains a Xilinx Vivado project with sources
 containing only VHDL-2002 and VHDL-2008 modules. Plain HDL without a soft CPU or C code is authored to
 talk with board components, a N25Q SPI Flash 256Mbit, and a 16x2 character LCD peripheral. The
-design is essentially equivalent function as the SF-Tester-Design-MB-A7/SF-Tester-Design-MB-S7
+design is essentially equivalent function as the
+SF-Tester-Design-MB-A7/SF-Tester-Design-MB-S7
 projects, but executes much faster as the control loop FSM is implemented in hardware
 instead of a low-speed CPU. This design targets either of the Arty A7-100 or the Arty S7-25
 development boards, and adjusts for the difference in available board components, such as
@@ -65,7 +66,7 @@ count of RGB LEDs.
 The folder SF-Tester-Design-Zynq contains a Xilinx Vivado IP Integrator plus Xilinx Vitis
 design. The Zynq hard ARM CPU #0 is configured to talk with board components,
 a 16x2 character LCD display, and a N25Q serial flash.
-Its functionality is mostly equivalent to that of the SF-Tester-Design-MB-A7 design,
+Its functionality is mostly equivalent function to that of the SF-Tester-Design-MB-A7 design,
 but differs in the count of RGB LEDs.
 
 ### VHDL naming conventions notice
