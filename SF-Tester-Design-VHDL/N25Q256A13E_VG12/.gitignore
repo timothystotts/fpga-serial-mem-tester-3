@@ -1,0 +1,17 @@
+cds.lib
+code
+depend.tcfg
+hdl.var
+include
+modelsim.ini
+path.txt
+readme.txt
+run_cov_vsim
+run_modelsim
+run_ncsim
+run_vcs
+sim
+stim
+top
+transcript
+vlog.opt

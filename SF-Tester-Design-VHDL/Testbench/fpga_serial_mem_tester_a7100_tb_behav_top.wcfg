@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="fpga_serial_mem_tester_a7100_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="fpga_serial_mem_tester_a7100_tb" />
+            <top_module name="lcd_text_functions_pkg" />
+            <top_module name="led_pwm_driver_pkg" />
+            <top_module name="sf_tester_fsm_pkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000000000 ms"></ZoomStartTime>
+      <ZoomEndTime time="30.674745573 ms"></ZoomEndTime>
+      <Cursor1Time time="30.674745573 ms"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="276"></NameColumnWidth>
+      <ValueColumnWidth column_width="120"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="40" />
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_a7100_tb/run_clock">
+      <obj_property name="ElementShortName">run_clock</obj_property>
+      <obj_property name="ObjectShortName">run_clock</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_clk">
+      <obj_property name="ElementShortName">s_clk</obj_property>
+      <obj_property name="ObjectShortName">s_clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_rst">
+      <obj_property name="ElementShortName">s_rst</obj_property>
+      <obj_property name="ObjectShortName">s_rst</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_sf3_sck">
+      <obj_property name="ElementShortName">s_sf3_sck</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_sck</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_sf3_csn">
+      <obj_property name="ElementShortName">s_sf3_csn</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_csn</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_sf3_copi_dq0">
+      <obj_property name="ElementShortName">s_sf3_copi_dq0</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_copi_dq0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_sf3_cipo_dq1">
+      <obj_property name="ElementShortName">s_sf3_cipo_dq1</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_cipo_dq1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_sf3_wrpn_dq2">
+      <obj_property name="ElementShortName">s_sf3_wrpn_dq2</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_wrpn_dq2</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_sf3_hldn_dq3">
+      <obj_property name="ElementShortName">s_sf3_hldn_dq3</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_hldn_dq3</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_led0_b">
+      <obj_property name="ElementShortName">s_led0_b</obj_property>
+      <obj_property name="ObjectShortName">s_led0_b</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_led1_b">
+      <obj_property name="ElementShortName">s_led1_b</obj_property>
+      <obj_property name="ObjectShortName">s_led1_b</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_led2_b">
+      <obj_property name="ElementShortName">s_led2_b</obj_property>
+      <obj_property name="ObjectShortName">s_led2_b</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_led3_b">
+      <obj_property name="ElementShortName">s_led3_b</obj_property>
+      <obj_property name="ObjectShortName">s_led3_b</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_led0_g">
+      <obj_property name="ElementShortName">s_led0_g</obj_property>
+      <obj_property name="ObjectShortName">s_led0_g</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_led1_g">
+      <obj_property name="ElementShortName">s_led1_g</obj_property>
+      <obj_property name="ObjectShortName">s_led1_g</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_led2_g">
+      <obj_property name="ElementShortName">s_led2_g</obj_property>
+      <obj_property name="ObjectShortName">s_led2_g</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_led3_g">
+      <obj_property name="ElementShortName">s_led3_g</obj_property>
+      <obj_property name="ObjectShortName">s_led3_g</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_led0_r">
+      <obj_property name="ElementShortName">s_led0_r</obj_property>
+      <obj_property name="ObjectShortName">s_led0_r</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_led1_r">
+      <obj_property name="ElementShortName">s_led1_r</obj_property>
+      <obj_property name="ObjectShortName">s_led1_r</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_led2_r">
+      <obj_property name="ElementShortName">s_led2_r</obj_property>
+      <obj_property name="ObjectShortName">s_led2_r</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_led3_r">
+      <obj_property name="ElementShortName">s_led3_r</obj_property>
+      <obj_property name="ObjectShortName">s_led3_r</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_led4">
+      <obj_property name="ElementShortName">s_led4</obj_property>
+      <obj_property name="ObjectShortName">s_led4</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_led5">
+      <obj_property name="ElementShortName">s_led5</obj_property>
+      <obj_property name="ObjectShortName">s_led5</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_led6">
+      <obj_property name="ElementShortName">s_led6</obj_property>
+      <obj_property name="ObjectShortName">s_led6</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_led7">
+      <obj_property name="ElementShortName">s_led7</obj_property>
+      <obj_property name="ObjectShortName">s_led7</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_bt0">
+      <obj_property name="ElementShortName">s_bt0</obj_property>
+      <obj_property name="ObjectShortName">s_bt0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_bt1">
+      <obj_property name="ElementShortName">s_bt1</obj_property>
+      <obj_property name="ObjectShortName">s_bt1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_bt2">
+      <obj_property name="ElementShortName">s_bt2</obj_property>
+      <obj_property name="ObjectShortName">s_bt2</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_bt3">
+      <obj_property name="ElementShortName">s_bt3</obj_property>
+      <obj_property name="ObjectShortName">s_bt3</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_sw0">
+      <obj_property name="ElementShortName">s_sw0</obj_property>
+      <obj_property name="ObjectShortName">s_sw0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_sw1">
+      <obj_property name="ElementShortName">s_sw1</obj_property>
+      <obj_property name="ObjectShortName">s_sw1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_sw2">
+      <obj_property name="ElementShortName">s_sw2</obj_property>
+      <obj_property name="ObjectShortName">s_sw2</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_sw3">
+      <obj_property name="ElementShortName">s_sw3</obj_property>
+      <obj_property name="ObjectShortName">s_sw3</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_cls_sck">
+      <obj_property name="ElementShortName">s_cls_sck</obj_property>
+      <obj_property name="ObjectShortName">s_cls_sck</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_cls_csn">
+      <obj_property name="ElementShortName">s_cls_csn</obj_property>
+      <obj_property name="ObjectShortName">s_cls_csn</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_cls_copi">
+      <obj_property name="ElementShortName">s_cls_copi</obj_property>
+      <obj_property name="ObjectShortName">s_cls_copi</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_cls_cipo">
+      <obj_property name="ElementShortName">s_cls_cipo</obj_property>
+      <obj_property name="ObjectShortName">s_cls_cipo</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_uart_tx">
+      <obj_property name="ElementShortName">s_uart_tx</obj_property>
+      <obj_property name="ObjectShortName">s_uart_tx</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/s_uart_rx">
+      <obj_property name="ElementShortName">s_uart_rx</obj_property>
+      <obj_property name="ObjectShortName">s_uart_rx</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_a7100_tb/c_clock_half_period">
+      <obj_property name="ElementShortName">c_clock_half_period</obj_property>
+      <obj_property name="ObjectShortName">c_clock_half_period</obj_property>
+   </wvobject>
+</wave_config>

@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="fpga_serial_mem_tester_a7100_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="fpga_serial_mem_tester_a7100_tb" />
+            <top_module name="lcd_text_functions_pkg" />
+            <top_module name="led_pwm_driver_pkg" />
+            <top_module name="sf_tester_fsm_pkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000000000 ms"></ZoomStartTime>
+      <ZoomEndTime time="30.674745573 ms"></ZoomEndTime>
+      <Cursor1Time time="30.674745573 ms"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="276"></NameColumnWidth>
+      <ValueColumnWidth column_width="120"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="87" />
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/eio_cipo_dq1_i">
+      <obj_property name="ElementShortName">eio_cipo_dq1_i</obj_property>
+      <obj_property name="ObjectShortName">eio_cipo_dq1_i</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/eio_cipo_dq1_o">
+      <obj_property name="ElementShortName">eio_cipo_dq1_o</obj_property>
+      <obj_property name="ObjectShortName">eio_cipo_dq1_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/eio_cipo_dq1_t">
+      <obj_property name="ElementShortName">eio_cipo_dq1_t</obj_property>
+      <obj_property name="ObjectShortName">eio_cipo_dq1_t</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/eio_copi_dq0_i">
+      <obj_property name="ElementShortName">eio_copi_dq0_i</obj_property>
+      <obj_property name="ObjectShortName">eio_copi_dq0_i</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/eio_copi_dq0_o">
+      <obj_property name="ElementShortName">eio_copi_dq0_o</obj_property>
+      <obj_property name="ObjectShortName">eio_copi_dq0_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/eio_copi_dq0_t">
+      <obj_property name="ElementShortName">eio_copi_dq0_t</obj_property>
+      <obj_property name="ObjectShortName">eio_copi_dq0_t</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/eio_csn_o">
+      <obj_property name="ElementShortName">eio_csn_o</obj_property>
+      <obj_property name="ObjectShortName">eio_csn_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/eio_csn_t">
+      <obj_property name="ElementShortName">eio_csn_t</obj_property>
+      <obj_property name="ObjectShortName">eio_csn_t</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/eio_hldn_dq3_i">
+      <obj_property name="ElementShortName">eio_hldn_dq3_i</obj_property>
+      <obj_property name="ObjectShortName">eio_hldn_dq3_i</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/eio_hldn_dq3_o">
+      <obj_property name="ElementShortName">eio_hldn_dq3_o</obj_property>
+      <obj_property name="ObjectShortName">eio_hldn_dq3_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/eio_hldn_dq3_t">
+      <obj_property name="ElementShortName">eio_hldn_dq3_t</obj_property>
+      <obj_property name="ObjectShortName">eio_hldn_dq3_t</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/eio_sck_o">
+      <obj_property name="ElementShortName">eio_sck_o</obj_property>
+      <obj_property name="ObjectShortName">eio_sck_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/eio_sck_t">
+      <obj_property name="ElementShortName">eio_sck_t</obj_property>
+      <obj_property name="ObjectShortName">eio_sck_t</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/eio_wrpn_dq2_i">
+      <obj_property name="ElementShortName">eio_wrpn_dq2_i</obj_property>
+      <obj_property name="ObjectShortName">eio_wrpn_dq2_i</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/eio_wrpn_dq2_o">
+      <obj_property name="ElementShortName">eio_wrpn_dq2_o</obj_property>
+      <obj_property name="ObjectShortName">eio_wrpn_dq2_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/eio_wrpn_dq2_t">
+      <obj_property name="ElementShortName">eio_wrpn_dq2_t</obj_property>
+      <obj_property name="ObjectShortName">eio_wrpn_dq2_t</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/i_address_of_cmd">
+      <obj_property name="ElementShortName">i_address_of_cmd[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i_address_of_cmd[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/i_ce_mhz_div">
+      <obj_property name="ElementShortName">i_ce_mhz_div</obj_property>
+      <obj_property name="ObjectShortName">i_ce_mhz_div</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/i_clk_mhz">
+      <obj_property name="ElementShortName">i_clk_mhz</obj_property>
+      <obj_property name="ObjectShortName">i_clk_mhz</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/i_cmd_erase_subsector">
+      <obj_property name="ElementShortName">i_cmd_erase_subsector</obj_property>
+      <obj_property name="ObjectShortName">i_cmd_erase_subsector</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/i_cmd_page_program">
+      <obj_property name="ElementShortName">i_cmd_page_program</obj_property>
+      <obj_property name="ObjectShortName">i_cmd_page_program</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/i_cmd_random_read">
+      <obj_property name="ElementShortName">i_cmd_random_read</obj_property>
+      <obj_property name="ObjectShortName">i_cmd_random_read</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/i_len_random_read">
+      <obj_property name="ElementShortName">i_len_random_read[8:0]</obj_property>
+      <obj_property name="ObjectShortName">i_len_random_read[8:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/i_rst_mhz">
+      <obj_property name="ElementShortName">i_rst_mhz</obj_property>
+      <obj_property name="ObjectShortName">i_rst_mhz</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/i_wr_data_stream">
+      <obj_property name="ElementShortName">i_wr_data_stream[7:0]</obj_property>
+      <obj_property name="ObjectShortName">i_wr_data_stream[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/i_wr_data_valid">
+      <obj_property name="ElementShortName">i_wr_data_valid</obj_property>
+      <obj_property name="ObjectShortName">i_wr_data_valid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/o_command_ready">
+      <obj_property name="ElementShortName">o_command_ready</obj_property>
+      <obj_property name="ObjectShortName">o_command_ready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/o_rd_data_stream">
+      <obj_property name="ElementShortName">o_rd_data_stream[7:0]</obj_property>
+      <obj_property name="ObjectShortName">o_rd_data_stream[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/o_rd_data_valid">
+      <obj_property name="ElementShortName">o_rd_data_valid</obj_property>
+      <obj_property name="ObjectShortName">o_rd_data_valid</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/o_reg_flag">
+      <obj_property name="ElementShortName">o_reg_flag[7:0]</obj_property>
+      <obj_property name="ObjectShortName">o_reg_flag[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/o_reg_status">
+      <obj_property name="ElementShortName">o_reg_status[7:0]</obj_property>
+      <obj_property name="ObjectShortName">o_reg_status[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/o_wr_data_ready">
+      <obj_property name="ElementShortName">o_wr_data_ready</obj_property>
+      <obj_property name="ObjectShortName">o_wr_data_ready</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/parm_FCLK">
+      <obj_property name="ElementShortName">parm_FCLK</obj_property>
+      <obj_property name="ObjectShortName">parm_FCLK</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/parm_ext_spi_clk_ratio">
+      <obj_property name="ElementShortName">parm_ext_spi_clk_ratio</obj_property>
+      <obj_property name="ObjectShortName">parm_ext_spi_clk_ratio</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/parm_fast_simulation">
+      <obj_property name="ElementShortName">parm_fast_simulation</obj_property>
+      <obj_property name="ObjectShortName">parm_fast_simulation</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/parm_rx_len_bits">
+      <obj_property name="ElementShortName">parm_rx_len_bits</obj_property>
+      <obj_property name="ObjectShortName">parm_rx_len_bits</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/parm_tx_len_bits">
+      <obj_property name="ElementShortName">parm_tx_len_bits</obj_property>
+      <obj_property name="ObjectShortName">parm_tx_len_bits</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/parm_wait_cyc_bits">
+      <obj_property name="ElementShortName">parm_wait_cyc_bits</obj_property>
+      <obj_property name="ObjectShortName">parm_wait_cyc_bits</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/s_go_enhan">
+      <obj_property name="ElementShortName">s_go_enhan</obj_property>
+      <obj_property name="ObjectShortName">s_go_enhan</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/s_go_quadio">
+      <obj_property name="ElementShortName">s_go_quadio</obj_property>
+      <obj_property name="ObjectShortName">s_go_quadio</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/s_rx_avail">
+      <obj_property name="ElementShortName">s_rx_avail</obj_property>
+      <obj_property name="ObjectShortName">s_rx_avail</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/s_rx_data">
+      <obj_property name="ElementShortName">s_rx_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_rx_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/s_rx_dequeue">
+      <obj_property name="ElementShortName">s_rx_dequeue</obj_property>
+      <obj_property name="ObjectShortName">s_rx_dequeue</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/s_rx_len">
+      <obj_property name="ElementShortName">s_rx_len[8:0]</obj_property>
+      <obj_property name="ObjectShortName">s_rx_len[8:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/s_rx_valid">
+      <obj_property name="ElementShortName">s_rx_valid</obj_property>
+      <obj_property name="ObjectShortName">s_rx_valid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/s_spi_idle">
+      <obj_property name="ElementShortName">s_spi_idle</obj_property>
+      <obj_property name="ObjectShortName">s_spi_idle</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/s_tx_data">
+      <obj_property name="ElementShortName">s_tx_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_tx_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/s_tx_enqueue">
+      <obj_property name="ElementShortName">s_tx_enqueue</obj_property>
+      <obj_property name="ObjectShortName">s_tx_enqueue</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/s_tx_len">
+      <obj_property name="ElementShortName">s_tx_len[8:0]</obj_property>
+      <obj_property name="ObjectShortName">s_tx_len[8:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/s_tx_ready">
+      <obj_property name="ElementShortName">s_tx_ready</obj_property>
+      <obj_property name="ObjectShortName">s_tx_ready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/s_wait_cyc">
+      <obj_property name="ElementShortName">s_wait_cyc[8:0]</obj_property>
+      <obj_property name="ObjectShortName">s_wait_cyc[8:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_csn_fsm_o">
+      <obj_property name="ElementShortName">sio_csn_fsm_o</obj_property>
+      <obj_property name="ObjectShortName">sio_csn_fsm_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_csn_fsm_t">
+      <obj_property name="ElementShortName">sio_csn_fsm_t</obj_property>
+      <obj_property name="ObjectShortName">sio_csn_fsm_t</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_csn_out_o">
+      <obj_property name="ElementShortName">sio_csn_out_o</obj_property>
+      <obj_property name="ObjectShortName">sio_csn_out_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_csn_out_t">
+      <obj_property name="ElementShortName">sio_csn_out_t</obj_property>
+      <obj_property name="ObjectShortName">sio_csn_out_t</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_dq0_fsm_o">
+      <obj_property name="ElementShortName">sio_dq0_fsm_o</obj_property>
+      <obj_property name="ObjectShortName">sio_dq0_fsm_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_dq0_fsm_t">
+      <obj_property name="ElementShortName">sio_dq0_fsm_t</obj_property>
+      <obj_property name="ObjectShortName">sio_dq0_fsm_t</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_dq0_in_i">
+      <obj_property name="ElementShortName">sio_dq0_in_i</obj_property>
+      <obj_property name="ObjectShortName">sio_dq0_in_i</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_dq0_meta_i">
+      <obj_property name="ElementShortName">sio_dq0_meta_i</obj_property>
+      <obj_property name="ObjectShortName">sio_dq0_meta_i</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_dq0_out_o">
+      <obj_property name="ElementShortName">sio_dq0_out_o</obj_property>
+      <obj_property name="ObjectShortName">sio_dq0_out_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_dq0_out_t">
+      <obj_property name="ElementShortName">sio_dq0_out_t</obj_property>
+      <obj_property name="ObjectShortName">sio_dq0_out_t</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_dq0_sync_i">
+      <obj_property name="ElementShortName">sio_dq0_sync_i</obj_property>
+      <obj_property name="ObjectShortName">sio_dq0_sync_i</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_dq1_fsm_o">
+      <obj_property name="ElementShortName">sio_dq1_fsm_o</obj_property>
+      <obj_property name="ObjectShortName">sio_dq1_fsm_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_dq1_fsm_t">
+      <obj_property name="ElementShortName">sio_dq1_fsm_t</obj_property>
+      <obj_property name="ObjectShortName">sio_dq1_fsm_t</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_dq1_in_i">
+      <obj_property name="ElementShortName">sio_dq1_in_i</obj_property>
+      <obj_property name="ObjectShortName">sio_dq1_in_i</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_dq1_meta_i">
+      <obj_property name="ElementShortName">sio_dq1_meta_i</obj_property>
+      <obj_property name="ObjectShortName">sio_dq1_meta_i</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_dq1_out_o">
+      <obj_property name="ElementShortName">sio_dq1_out_o</obj_property>
+      <obj_property name="ObjectShortName">sio_dq1_out_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_dq1_out_t">
+      <obj_property name="ElementShortName">sio_dq1_out_t</obj_property>
+      <obj_property name="ObjectShortName">sio_dq1_out_t</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_dq1_sync_i">
+      <obj_property name="ElementShortName">sio_dq1_sync_i</obj_property>
+      <obj_property name="ObjectShortName">sio_dq1_sync_i</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_dq2_fsm_o">
+      <obj_property name="ElementShortName">sio_dq2_fsm_o</obj_property>
+      <obj_property name="ObjectShortName">sio_dq2_fsm_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_dq2_fsm_t">
+      <obj_property name="ElementShortName">sio_dq2_fsm_t</obj_property>
+      <obj_property name="ObjectShortName">sio_dq2_fsm_t</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_dq2_in_i">
+      <obj_property name="ElementShortName">sio_dq2_in_i</obj_property>
+      <obj_property name="ObjectShortName">sio_dq2_in_i</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_dq2_meta_i">
+      <obj_property name="ElementShortName">sio_dq2_meta_i</obj_property>
+      <obj_property name="ObjectShortName">sio_dq2_meta_i</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_dq2_out_o">
+      <obj_property name="ElementShortName">sio_dq2_out_o</obj_property>
+      <obj_property name="ObjectShortName">sio_dq2_out_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_dq2_out_t">
+      <obj_property name="ElementShortName">sio_dq2_out_t</obj_property>
+      <obj_property name="ObjectShortName">sio_dq2_out_t</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_dq2_sync_i">
+      <obj_property name="ElementShortName">sio_dq2_sync_i</obj_property>
+      <obj_property name="ObjectShortName">sio_dq2_sync_i</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_dq3_fsm_o">
+      <obj_property name="ElementShortName">sio_dq3_fsm_o</obj_property>
+      <obj_property name="ObjectShortName">sio_dq3_fsm_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_dq3_fsm_t">
+      <obj_property name="ElementShortName">sio_dq3_fsm_t</obj_property>
+      <obj_property name="ObjectShortName">sio_dq3_fsm_t</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_dq3_in_i">
+      <obj_property name="ElementShortName">sio_dq3_in_i</obj_property>
+      <obj_property name="ObjectShortName">sio_dq3_in_i</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_dq3_meta_i">
+      <obj_property name="ElementShortName">sio_dq3_meta_i</obj_property>
+      <obj_property name="ObjectShortName">sio_dq3_meta_i</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_dq3_out_o">
+      <obj_property name="ElementShortName">sio_dq3_out_o</obj_property>
+      <obj_property name="ObjectShortName">sio_dq3_out_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_dq3_out_t">
+      <obj_property name="ElementShortName">sio_dq3_out_t</obj_property>
+      <obj_property name="ObjectShortName">sio_dq3_out_t</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_dq3_sync_i">
+      <obj_property name="ElementShortName">sio_dq3_sync_i</obj_property>
+      <obj_property name="ObjectShortName">sio_dq3_sync_i</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_sck_fsm_o">
+      <obj_property name="ElementShortName">sio_sck_fsm_o</obj_property>
+      <obj_property name="ObjectShortName">sio_sck_fsm_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_sck_fsm_t">
+      <obj_property name="ElementShortName">sio_sck_fsm_t</obj_property>
+      <obj_property name="ObjectShortName">sio_sck_fsm_t</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_sck_out_o">
+      <obj_property name="ElementShortName">sio_sck_out_o</obj_property>
+      <obj_property name="ObjectShortName">sio_sck_out_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_a7100_tb/u_fpga_serial_mem_tester_a7100/u_pmod_sf3_custom_driver/sio_sck_out_t">
+      <obj_property name="ElementShortName">sio_sck_out_t</obj_property>
+      <obj_property name="ObjectShortName">sio_sck_out_t</obj_property>
+   </wvobject>
+</wave_config>
