@@ -94,14 +94,23 @@ cannot change the terminology in use by the tools.
 
 [Serial Flash Sector Tester Design Diagrams info](https://github.com/timothystotts/fpga-serial-mem-tester-3/blob/main/SF-Tester-Design-Documents/SF-Tester-Design-Diagrams.pdf)
 
-#### Target device assembly: Arty-A7-100T with Pmod SF3, Pmod CLS on extension cable
+#### Target device assembly: Arty A7-100 with Pmod SF3, Pmod CLS on extension cable
 ![Target device assembly](https://github.com/timothystotts/fpga-serial-mem-tester-3/blob/main/SF-Tester-Design-Documents/img_serial-flash-tester-assembled-20200722.jpg)
 
-#### Target device execution: Arty-A7-100T with Pmod SF3, Pmod CLS on extension cable
+#### Target device execution: Arty A7-100 with Pmod SF3, Pmod CLS on extension cable
 ![Target device assembly executing](https://github.com/timothystotts/fpga-serial-mem-tester-3/blob/main/SF-Tester-Design-Documents/img_serial-flash-tester-executing-a_20210217.jpg)
 
-#### Target device assembly: Zybo-Z7-20 with Pmod SF3, Pmod CLS on extension cable
+#### Target device assembly: Arty S7-25 with Pmod SF3, Pmod CLS on extension cable
+![Target device assembly](https://github.com/timothystotts/fpga-serial-mem-tester-3/blob/main/SF-Tester-Design-Documents/img_serial-flash-tester-s7-assembled-20220723.jpg)
+
+#### Target device execution: Arty S7-25 with Pmod SF3, Pmod CLS on extension cable
+![Target device assembly executing](https://github.com/timothystotts/fpga-serial-mem-tester-3/blob/main/SF-Tester-Design-Documents/img_serial-flash-tester-s7-executing-a-20220723.jpg)
+
+#### Target device assembly: Zybo Z7-20 with Pmod SF3, Pmod CLS on extension cable
 ![Target device assembly](https://github.com/timothystotts/fpga-serial-mem-tester-3/blob/main/SF-Tester-Design-Documents/img_serial-flash-tester-zynq-assembled-20200730.jpg)
+
+#### Target device execution: Zybo Z7-20 with Pmod SF3, Pmod CLS on extension cable
+![Target device assembly](https://github.com/timothystotts/fpga-serial-mem-tester-3/blob/main/SF-Tester-Design-Documents/img_serial-flash-tester-zynq-executing-a-20220723.jpg)
 
 #### Block diagram architecture of the HDL design:
 ![SF3 Tester Architecture Diagram](https://github.com/timothystotts/fpga-serial-mem-tester-3/blob/main/SF-Tester-Design-Documents/SF-Tester-Design-Diagrams-Architecture%201.svg)
