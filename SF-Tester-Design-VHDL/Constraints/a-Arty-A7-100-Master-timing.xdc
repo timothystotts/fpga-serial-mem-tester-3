@@ -157,8 +157,8 @@ set_output_delay -clock [get_clocks wiz_40mhz_virt_in] -max -add_delay 3.500 [ge
 
 ## The output of TX ONLY is synchronized out of the design at the MMCM 7.373 MHz clock.
 ## A virtual clock is used to allow the tool to automatically compute jitter and other metrics.
-set_output_delay -clock [get_clocks wiz_7_373mhz_virt_in] -min -add_delay -2.400 [get_ports eo_uart_tx]
-set_output_delay -clock [get_clocks wiz_7_373mhz_virt_in] -max -add_delay 14.500 [get_ports eo_uart_tx]
+set_output_delay -clock [get_clocks wiz_7_373mhz_virt_out] -min -add_delay -2.400 [get_ports eo_uart_tx]
+set_output_delay -clock [get_clocks wiz_7_373mhz_virt_out] -max -add_delay 14.500 [get_ports eo_uart_tx]
 
 ## ChipKit Outer Digital Header
 
@@ -169,6 +169,8 @@ set_output_delay -clock [get_clocks wiz_7_373mhz_virt_in] -max -add_delay 14.500
 ## ChipKit I2C
 
 ## Misc. ChipKit Ports
+set_input_delay -clock [get_clocks sys_clk_pin] -min -add_delay 4.000 [get_ports i_resetn]
+set_input_delay -clock [get_clocks sys_clk_pin] -max -add_delay 6.000 [get_ports i_resetn]
 set_false_path -from [get_ports i_resetn] -to [all_registers]
 
 ## SMSC Ethernet PHY
