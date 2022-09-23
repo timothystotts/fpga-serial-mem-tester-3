@@ -492,7 +492,8 @@ sf_tester_fsm #(
   .parm_pattern_incrval_c(c_tester_pattern_incrval_c),
   .parm_pattern_startval_d(c_tester_pattern_startval_d),
   .parm_pattern_incrval_d(c_tester_pattern_incrval_d),
-  .parm_max_possible_byte_count(c_max_possible_byte_count)
+  .parm_max_possible_byte_count(c_max_possible_byte_count),
+  .parm_tester_page_cnt_per_iter(c_tester_page_cnt_per_iter)
   ) u_sf_tester_fsm (
   .i_clk_40mhz(s_clk_40mhz),
   .i_rst_40mhz(s_rst_40mhz),

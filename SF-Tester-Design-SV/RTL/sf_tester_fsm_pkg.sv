@@ -61,32 +61,32 @@ package sf_tester_fsm_pkg;
 	} t_tester_state;
 
 	// system control of N25Q state machine
-	// const integer c_max_possible_byte_count = 67108864; // 512 Mbit
-	const integer c_max_possible_byte_count = 33555432; // 256 Mbit
-	const integer c_total_iteration_count = 32;
-	const integer c_per_iteration_byte_count = c_max_possible_byte_count / c_total_iteration_count;
-	const integer c_last_starting_byte_addr = c_per_iteration_byte_count * (c_total_iteration_count - 1);
+	// localparam integer c_max_possible_byte_count = 67108864; // 512 Mbit
+	localparam integer c_max_possible_byte_count = 33555432; // 256 Mbit
+	localparam integer c_total_iteration_count = 32;
+	localparam integer c_per_iteration_byte_count = c_max_possible_byte_count / c_total_iteration_count;
+	localparam integer c_last_starting_byte_addr = c_per_iteration_byte_count * (c_total_iteration_count - 1);
 
-	const integer c_sf3_subsector_addr_incr = 4096;
-	const integer c_sf3_page_addr_incr = 256;
+	localparam integer c_sf3_subsector_addr_incr = 4096;
+	localparam integer c_sf3_page_addr_incr = 256;
 
-	const integer c_tester_subsector_cnt_per_iter = 8192 / c_total_iteration_count;
-	const integer c_tester_page_cnt_per_iter = 131072 / c_total_iteration_count;
+	localparam integer c_tester_subsector_cnt_per_iter = 8192 / c_total_iteration_count;
+	localparam integer c_tester_page_cnt_per_iter = 131072 / c_total_iteration_count;
 
 	// Testing patterns, the starting byte value and the byte increment value, causing
 	// either a sequential counting pattern or a pseudo-random counting pattern. All
 	// 8-bit values will occur in the sequence if the increment is a prime number.
-	const logic [7:0] c_tester_pattern_startval_a = 8'h00;
-	const logic [7:0] c_tester_pattern_incrval_a = 8'h01;
+	localparam logic [7:0] c_tester_pattern_startval_a = 8'h00;
+	localparam logic [7:0] c_tester_pattern_incrval_a = 8'h01;
 
-	const logic [7:0] c_tester_pattern_startval_b = 8'h08;
-	const logic [7:0] c_tester_pattern_incrval_b = 8'h07;
+	localparam logic [7:0] c_tester_pattern_startval_b = 8'h08;
+	localparam logic [7:0] c_tester_pattern_incrval_b = 8'h07;
 
-	const logic [7:0] c_tester_pattern_startval_c = 8'h10;
-	const logic [7:0] c_tester_pattern_incrval_c = 8'h0F;
+	localparam logic [7:0] c_tester_pattern_startval_c = 8'h10;
+	localparam logic [7:0] c_tester_pattern_incrval_c = 8'h0F;
 
-	const logic [7:0] c_tester_pattern_startval_d = 8'h18;
-	const logic [7:0] c_tester_pattern_incrval_d = 8'h17;
+	localparam logic [7:0] c_tester_pattern_startval_d = 8'h18;
+	localparam logic [7:0] c_tester_pattern_incrval_d = 8'h17;
 
 endpackage : sf_tester_fsm_pkg
 //------------------------------------------------------------------------------

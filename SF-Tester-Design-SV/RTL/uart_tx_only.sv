@@ -36,11 +36,11 @@
 module uart_tx_only
 	#(parameter
 		// the Modem Baud Rate of the UART TX machine, max 115200
-		parm_BAUD = 115200,
+		integer parm_BAUD = 115200,
 		// the ASCII line length
-		parm_ascii_line_length = 35,
+		integer parm_ascii_line_length = 35,
 		// the almost full threshold for FIFO byte count range 0 to 2047
-		[10:0] parm_almost_full_thresh = {3'b111,8'hDC}
+		logic [10:0] parm_almost_full_thresh = {3'b111,8'hDC}
 		)
 	(
 		// system clock

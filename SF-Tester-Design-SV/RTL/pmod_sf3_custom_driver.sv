@@ -165,7 +165,7 @@ begin: p_reg_spi_fsm_out
 		eio_wrpn_dq2_t <= sio_dq2_fsm_t;
 
 		eio_hldn_dq3_o <= sio_dq3_fsm_o;
-		eio_hldn_dq4_t <= sio_dq3_fsm_t;
+		eio_hldn_dq3_t <= sio_dq3_fsm_t;
 	end : ce_register_spi_outs
 end : p_reg_spi_fsm_out
 

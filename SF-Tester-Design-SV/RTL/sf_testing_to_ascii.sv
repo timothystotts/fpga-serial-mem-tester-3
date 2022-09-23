@@ -32,16 +32,16 @@
 //Part 1: Module header:--------------------------------------------------------
 module sf_testing_to_ascii
     import lcd_text_functions_pkg::ascii_of_hdigit;
-    import sf_tester_fsm_pkg::t_tester_state;
+    import sf_tester_fsm_pkg::*;
     #(parameter
-        [7:0] parm_pattern_startval_a,
-        [7:0] parm_pattern_incrval_a,
-        [7:0] parm_pattern_startval_b,
-        [7:0] parm_pattern_incrval_b,
-        [7:0] parm_pattern_startval_c,
-        [7:0] parm_pattern_incrval_c,
-        [7:0] parm_pattern_startval_d,
-        [7:0] parm_pattern_incrval_d,
+        logic [7:0] parm_pattern_startval_a,
+        logic [7:0] parm_pattern_incrval_a,
+        logic [7:0] parm_pattern_startval_b,
+        logic [7:0] parm_pattern_incrval_b,
+        logic [7:0] parm_pattern_startval_c,
+        logic [7:0] parm_pattern_incrval_c,
+        logic [7:0] parm_pattern_startval_d,
+        logic [7:0] parm_pattern_incrval_d,
         integer parm_max_possible_byte_count
         )
     (
@@ -53,7 +53,7 @@ module sf_testing_to_ascii
         input logic [7:0] i_pattern_start,
         input logic [7:0] i_pattern_incr,
         input logic [$clog2(parm_max_possible_byte_count)-1:0] i_error_count,
-        input i_tester_pr_state t_tester_state,
+        input t_tester_state i_tester_pr_state,
         // ASCII outputs
         output logic [16*8-1:0] o_lcd_ascii_line1,
         output logic [16*8-1:0] o_lcd_ascii_line2,

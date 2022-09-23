@@ -50,7 +50,8 @@ module sf_tester_fsm
         logic [7:0] parm_pattern_startval_d,
         logic [7:0] parm_pattern_incrval_d,
         // Maximum byte count of the memory being operated
-        integer parm_max_possible_byte_count
+        integer parm_max_possible_byte_count,
+        integer parm_tester_page_cnt_per_iter
         )
     (
         // clock and reset
@@ -117,8 +118,8 @@ logic [31:0] s_addr_start_val;
 logic [31:0] s_addr_start_aux;
 logic s_start_at_zero_val;
 logic s_start_at_zero_aux;
-logic [$clog2(c_tester_page_cnt_per_iter)-1:0] s_i_val;
-logic [$clog2(c_tester_page_cnt_per_iter)-1:0] s_i_aux;
+logic [$clog2(parm_tester_page_cnt_per_iter)-1:0] s_i_val;
+logic [$clog2(parm_tester_page_cnt_per_iter)-1:0] s_i_aux;
 
 //Part 3: Statements------------------------------------------------------------
 // Outputs for other modules to read
@@ -211,13 +212,13 @@ begin : p_tester_fsm_comb
             s_test_done_val = (s_addr_start_aux < c_last_starting_byte_addr) ? 1'b0 : 1'b1;
 
             if (s_addr_start_aux < c_last_starting_byte_addr) begin
-                if ((i_buttons_debounced = 4'b0001) || (i_switches_debounced = 4'b0001))
+                if ((i_buttons_debounced == 4'b0001) || (i_switches_debounced == 4'b0001))
                     s_tester_nx_state = ST_WAIT_BUTTON0_REL;
-                else if ((i_buttons_debounced = 4'b0010) || (i_switches_debounced = 4'b0010))
+                else if ((i_buttons_debounced == 4'b0010) || (i_switches_debounced == 4'b0010))
                     s_tester_nx_state = ST_WAIT_BUTTON1_REL;
-                else if ((i_buttons_debounced = 4'b0100) || (i_switches_debounced = 4'b0100))
+                else if ((i_buttons_debounced == 4'b0100) || (i_switches_debounced == 4'b0100))
                     s_tester_nx_state = ST_WAIT_BUTTON2_REL;
-                else if ((i_buttons_debounced = 4'b1000) || (i_switches_debounced = 4'b1000))
+                else if ((i_buttons_debounced == 4'b1000) || (i_switches_debounced == 4'b1000))
                     s_tester_nx_state = ST_WAIT_BUTTON3_REL;
                 else
                     s_tester_nx_state = ST_WAIT_BUTTON_DEP;
