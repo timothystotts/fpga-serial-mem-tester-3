@@ -23,10 +23,12 @@
 --------------------------------------------------------------------------------
 -- \file pmod_sf3_custom_driver.vhdl
 --
--- \brief A wrapper for the single Slave Select, Extended SPI modules
+-- \brief A wrapper for the single Chip Select, Extended SPI modules
 --        \ref pmod_sf3_quad_spi_solo and \ref pmod_generic_qspi_solo ,
 --        implementing a custom multi-mode operation of the PMOD SF3
 --        peripheral board by Digilent Inc with only SPI bus communication.
+--        Note that Extended SPI Mode 0 is implemented currently, and
+--        QuadIO SPI is not currently implemented.
 --------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;

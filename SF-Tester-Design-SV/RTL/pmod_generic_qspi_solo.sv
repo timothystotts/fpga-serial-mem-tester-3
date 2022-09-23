@@ -33,17 +33,10 @@
 //Multiple Recursive Moore Machines
 //Part 1: Module header:--------------------------------------------------------
 module pmod_generic_qspi_solo
+	import pmod_quad_spi_solo_pkg::*;
 	#(parameter
-		/* Note that these parameters should be updated to max counts instead of
-		   LOG2, and then several localparam compute the LOG2 with $clog2 . */
 		/* Ratio of i_ext_spi_clk_x to SPI sck bus output. */
-		integer parm_ext_spi_clk_ratio = 32,
-		/* LOG2 of the TX FIFO max count */
-		integer parm_tx_len_bits = 11,
-		/* LOG2 of max Wait Cycles count between end of TX and start of RX */
-		integer parm_wait_cyc_bits = 2,
-		/* LOG2 of the RX FIFO max count */
-		integer parm_rx_len_bits = 11 /* now ignored due to usage of MACRO */
+		integer parm_ext_spi_clk_ratio = 32
 		)
 	(
 		/* SPI bus outputs and input to top-level */
@@ -140,12 +133,12 @@ logic s_spi_clk_ce3;
 logic s_go_enhan;
 
 // FSM auxiliary registers
-logic [(parm_tx_len_bits - 1):0] s_tx_len_val;
-logic [(parm_tx_len_bits - 1):0] s_tx_len_aux;
-logic [(parm_rx_len_bits - 1):0] s_rx_len_val;
-logic [(parm_rx_len_bits - 1):0] s_rx_len_aux;
-logic [(parm_wait_cyc_bits - 1):0] s_wait_cyc_val;
-logic [(parm_wait_cyc_bits - 1):0] s_wait_cyc_aux;
+t_pmod_sf3_tx_len s_tx_len_val;
+t_pmod_sf3_tx_len s_tx_len_aux;
+t_pmod_sf3_rx_len s_rx_len_val;
+t_pmod_sf3_rx_len s_rx_len_aux;
+t_pmod_sf3_wait_cyc s_wait_cyc_val;
+t_pmod_sf3_wait_cyc s_wait_cyc_aux;
 logic s_go_enhan_val;
 logic s_go_enhan_aux;
 
