@@ -78,7 +78,7 @@ module sf_tester_fsm
         output logic [31:0] o_addr_start,
         output logic [7:0] o_pattern_start,
         output logic [7:0] o_pattern_incr,
-        output integer o_error_count,
+        output logic [$clog2(parm_max_possible_byte_count)-1:0] o_error_count,
         output logic o_test_pass,
         output logic o_test_done
     );

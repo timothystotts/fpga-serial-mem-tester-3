@@ -212,7 +212,7 @@ t_tester_state s_sf3_tester_pr_state;
 logic [31:0] s_sf3_addr_start;
 logic [7:0] s_sf3_pattern_start;
 logic [7:0] s_sf3_pattern_incr;
-integer s_sf3_error_count;
+logic [$clog2(c_max_possible_byte_count)-1:0] s_sf3_error_count;
 logic s_sf3_test_pass;
 logic s_sf3_test_done;
 

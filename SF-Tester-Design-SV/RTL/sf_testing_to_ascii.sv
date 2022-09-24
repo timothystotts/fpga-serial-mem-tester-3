@@ -52,7 +52,7 @@ module sf_testing_to_ascii
         input logic [31:0] i_addr_start,
         input logic [7:0] i_pattern_start,
         input logic [7:0] i_pattern_incr,
-        input integer i_error_count,
+        input logic [$clog2(parm_max_possible_byte_count)-1:0] i_error_count,
         input t_tester_state i_tester_pr_state,
         // ASCII outputs
         output logic [16*8-1:0] o_lcd_ascii_line1,
@@ -78,6 +78,7 @@ logic [7:0] s_txt_ascii_errcntdec_char5;
 logic [7:0] s_txt_ascii_errcntdec_char6;
 logic [7:0] s_txt_ascii_errcntdec_char7;
 
+logic [$clog2(parm_max_possible_byte_count)-1:0] s_error_count;
 // logic [3:0] s_sf3_err_count_divide7;
 // logic [3:0] s_sf3_err_count_divide6;
 // logic [3:0] s_sf3_err_count_divide5;
@@ -181,14 +182,16 @@ end : p_sf3mode_3char
 // number.
 always_ff @(posedge i_clk_40mhz)
 begin : p_reg_errcnt_digits
-    s_sf3_err_count_digit7 <= i_error_count / 10000000 % 10;
-    s_sf3_err_count_digit6 <= i_error_count / 1000000 % 10;
-    s_sf3_err_count_digit5 <= i_error_count / 100000 % 10;
-    s_sf3_err_count_digit4 <= i_error_count / 10000 % 10;
-    s_sf3_err_count_digit3 <= i_error_count / 1000 % 10;
-    s_sf3_err_count_digit2 <= i_error_count / 100 % 10;
-    s_sf3_err_count_digit1 <= i_error_count / 10 % 10;
-    s_sf3_err_count_digit0 <= i_error_count % 10;
+    s_error_count <= i_error_count;
+
+    s_sf3_err_count_digit7 <= s_error_count / 10000000 % 10;
+    s_sf3_err_count_digit6 <= s_error_count / 1000000 % 10;
+    s_sf3_err_count_digit5 <= s_error_count / 100000 % 10;
+    s_sf3_err_count_digit4 <= s_error_count / 10000 % 10;
+    s_sf3_err_count_digit3 <= s_error_count / 1000 % 10;
+    s_sf3_err_count_digit2 <= s_error_count / 100 % 10;
+    s_sf3_err_count_digit1 <= s_error_count / 10 % 10;
+    s_sf3_err_count_digit0 <= s_error_count % 10;
 
     s_txt_ascii_errcntdec_char7 <= ascii_of_hdigit(s_sf3_err_count_digit7);
     s_txt_ascii_errcntdec_char6 <= ascii_of_hdigit(s_sf3_err_count_digit6);

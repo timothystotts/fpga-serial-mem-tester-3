@@ -169,6 +169,8 @@ set_output_delay -clock [get_clocks wiz_7_373mhz_virt_in] -max -add_delay 14.500
 ## ChipKit I2C
 
 ## Misc. ChipKit Ports
+set_input_delay -clock [get_clocks wiz_40mhz_virt_in] -min -add_delay 10.000 [get_ports i_resetn]
+set_input_delay -clock [get_clocks wiz_40mhz_virt_in] -max -add_delay 15.000 [get_ports i_resetn]
 set_false_path -from [get_ports i_resetn] -to [all_registers]
 
 ## SMSC Ethernet PHY
