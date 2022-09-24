@@ -35,7 +35,7 @@
 `begin_keywords "1800-2012"
 //Multiple Moore Machines
 //Part 1: Module header:--------------------------------------------------------
-module fpga_serial_mem_tester
+module fpga_serial_mem_tester_a7100
   import pmod_stand_spi_solo_pkg::*;
   import pmod_quad_spi_solo_pkg::*;
   import sf_tester_fsm_pkg::*;
@@ -606,6 +606,6 @@ uart_tx_feed #(
   .i_dat_ascii_line(s_uart_txt_ascii_line)
   );
 
-endmodule : fpga_serial_mem_tester
+endmodule : fpga_serial_mem_tester_a7100
 //------------------------------------------------------------------------------
 `end_keywords

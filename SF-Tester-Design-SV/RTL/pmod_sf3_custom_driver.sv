@@ -98,49 +98,33 @@ pmod_generic_qspi_solo_intf #(
 // SPI signals to external tri-state
 logic sio_sck_fsm_o;
 logic sio_sck_fsm_t;
-logic sio_sck_out_o;
-logic sio_sck_out_t;
 
 logic sio_csn_fsm_o;
 logic sio_csn_fsm_t;
-logic sio_csn_out_o;
-logic sio_csn_out_t;
 
 logic sio_dq0_fsm_o;
 logic sio_dq0_fsm_t;
-logic sio_dq0_out_o;
-logic sio_dq0_out_t;
 
 logic sio_dq0_sync_i;
 logic sio_dq0_meta_i;
-logic sio_dq0_in_i;
 
 logic sio_dq1_fsm_o;
 logic sio_dq1_fsm_t;
-logic sio_dq1_out_o;
-logic sio_dq1_out_t;
 
 logic sio_dq1_sync_i;
 logic sio_dq1_meta_i;
-logic sio_dq1_in_i;
 
 logic sio_dq2_fsm_o;
 logic sio_dq2_fsm_t;
-logic sio_dq2_out_o;
-logic sio_dq2_out_t;
 
 logic sio_dq2_sync_i;
 logic sio_dq2_meta_i;
-logic sio_dq2_in_i;
 
 logic sio_dq3_fsm_o;
 logic sio_dq3_fsm_t;
-logic sio_dq3_out_o;
-logic sio_dq3_out_t;
 
 logic sio_dq3_sync_i;
 logic sio_dq3_meta_i;
-logic sio_dq3_in_i;
 
 
 //Part 3: Statements------------------------------------------------------------

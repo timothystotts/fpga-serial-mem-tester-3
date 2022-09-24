@@ -97,49 +97,33 @@ architecture rtl of pmod_sf3_custom_driver is
 	-- SPI signals to external tri-state
 	signal sio_sck_fsm_o : std_logic;
 	signal sio_sck_fsm_t : std_logic;
-	signal sio_sck_out_o : std_logic;
-	signal sio_sck_out_t : std_logic;
 
 	signal sio_csn_fsm_o : std_logic;
 	signal sio_csn_fsm_t : std_logic;
-	signal sio_csn_out_o : std_logic;
-	signal sio_csn_out_t : std_logic;
 
 	signal sio_dq0_fsm_o : std_logic;
 	signal sio_dq0_fsm_t : std_logic;
-	signal sio_dq0_out_o : std_logic;
-	signal sio_dq0_out_t : std_logic;
 
 	signal sio_dq0_sync_i : std_logic;
 	signal sio_dq0_meta_i : std_logic;
-	signal sio_dq0_in_i   : std_logic;
 
 	signal sio_dq1_fsm_o : std_logic;
 	signal sio_dq1_fsm_t : std_logic;
-	signal sio_dq1_out_o : std_logic;
-	signal sio_dq1_out_t : std_logic;
 
 	signal sio_dq1_sync_i : std_logic;
 	signal sio_dq1_meta_i : std_logic;
-	signal sio_dq1_in_i   : std_logic;
 
 	signal sio_dq2_fsm_o : std_logic;
 	signal sio_dq2_fsm_t : std_logic;
-	signal sio_dq2_out_o : std_logic;
-	signal sio_dq2_out_t : std_logic;
 
 	signal sio_dq2_sync_i : std_logic;
 	signal sio_dq2_meta_i : std_logic;
-	signal sio_dq2_in_i   : std_logic;
 
 	signal sio_dq3_fsm_o : std_logic;
 	signal sio_dq3_fsm_t : std_logic;
-	signal sio_dq3_out_o : std_logic;
-	signal sio_dq3_out_t : std_logic;
 
 	signal sio_dq3_sync_i : std_logic;
 	signal sio_dq3_meta_i : std_logic;
-	signal sio_dq3_in_i   : std_logic;
 
 	-- system SPI control signals and data
 	signal s_go_enhan   : std_logic;
