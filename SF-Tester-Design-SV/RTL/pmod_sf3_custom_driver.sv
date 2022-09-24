@@ -231,16 +231,16 @@ pmod_generic_qspi_solo #(
 	.eio_csn_o(sio_csn_fsm_o),
 	.eio_csn_t(sio_csn_fsm_t),
 	.eio_copi_dq0_o(sio_dq0_fsm_o),
-	.eio_copi_dq0_i(sio_dq0_fsm_i),
+	.eio_copi_dq0_i(sio_dq0_sync_i),
 	.eio_copi_dq0_t(sio_dq0_fsm_t),
 	.eio_cipo_dq1_o(sio_dq1_fsm_o),
-	.eio_cipo_dq1_i(sio_dq1_fsm_i),
+	.eio_cipo_dq1_i(sio_dq1_sync_i),
 	.eio_cipo_dq1_t(sio_dq1_fsm_t),
 	.eio_wrpn_dq2_o(sio_dq2_fsm_o),
-	.eio_wrpn_dq2_i(sio_dq2_fsm_i),
+	.eio_wrpn_dq2_i(sio_dq2_sync_i),
 	.eio_wrpn_dq2_t(sio_dq2_fsm_t),
 	.eio_hldn_dq3_o(sio_dq3_fsm_o),
-	.eio_hldn_dq3_i(sio_dq3_fsm_i),
+	.eio_hldn_dq3_i(sio_dq3_sync_i),
 	.eio_hldn_dq3_t(sio_dq3_fsm_t)
 	);
 

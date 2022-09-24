@@ -385,7 +385,7 @@ end : p_dat_fsm_state_aux
 
 /* Pass the auxiliary signal that lasts for a single iteration of all four
    s_spi_clk_4x clock enables on to the \ref p_spi_fsm_comb machine. */
-assign sdrv.go_enhan = s_go_enhan_aux;
+assign s_go_enhan = s_go_enhan_aux;
 
 /* System Data GO data value holder and sdrv.go_enhan pulse stretcher for all
    four clock enables duration of the 4x clock, starting at an clock enable

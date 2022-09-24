@@ -78,10 +78,10 @@ module fpga_serial_mem_tester
 	input logic ei_sw2,
 	input logic ei_sw3,
 	// four buttons
-	input logic ei_btn0,
-	input logic ei_btn1,
-	input logic ei_btn2,
-	input logic ei_btn3,
+	input logic ei_bt0,
+	input logic ei_bt1,
+	input logic ei_bt2,
+	input logic ei_bt3,
 	// PMOD CLS SPI bus 4-wire
 	output logic eo_pmod_cls_csn,
 	output logic eo_pmod_cls_sck,
@@ -163,7 +163,7 @@ logic [8:0] s_sf3_len_random_read;
 logic [7:0] s_sf3_wr_data_stream;
 logic s_sf3_wr_data_valid;
 logic s_sf3_wr_data_ready;
-logic s_sf3_rd_data_stream;
+logic [7:0] s_sf3_rd_data_stream;
 logic s_sf3_rd_data_valid;
 logic [7:0] s_sf3_reg_status;
 logic [7:0] s_sf3_reg_flag;
@@ -202,7 +202,7 @@ logic [3:0] s_sw_deb;
 
 // switch inputs debounced 
 logic [3:0] si_buttons;
-logic [3:0] s_btn_deb;
+logic [3:0] s_btns_deb;
 
 // SF3 clock enable division down from 40 MHz
 localparam integer c_sf3_tester_ce_div_ratio = (c_FCLK / 5000000 / 4);
@@ -361,7 +361,7 @@ clock_enable_divider #(
 // Synchronize and debounce the four input buttons on the Arty A7 to be
 // debounced and exclusive of each other (ignored if more than one
 // selected at the same time).
-assign si_buttons = {ei_btn3, ei_btn2, ei_btn1, ei_btn0};
+assign si_buttons = {ei_bt3, ei_bt2, ei_bt1, ei_bt0};
 
 multi_input_debounce #(
   .FCLK(c_FCLK)
@@ -369,7 +369,7 @@ multi_input_debounce #(
     .i_clk_mhz(s_clk_40mhz),
     .i_rst_mhz(s_rst_40mhz),
     .ei_buttons(si_buttons),
-    .o_btns_deb(s_btn_deb)
+    .o_btns_deb(s_btns_deb)
     );
 
 // Synchronize and debounce the four input switches on the Arty A7 to be
@@ -454,11 +454,12 @@ pmod_sf3_custom_driver #(
   .i_cmd_erase_subsector(s_sf3_cmd_erase_subsector),
   .i_cmd_page_program(s_sf3_cmd_page_program),
   .i_cmd_random_read(s_sf3_cmd_random_read),
+  .i_len_random_read(s_sf3_len_random_read),
   .i_wr_data_stream(s_sf3_wr_data_stream),
   .i_wr_data_valid(s_sf3_wr_data_valid),
   .o_wr_data_ready(s_sf3_wr_data_ready),
   .o_rd_data_stream(s_sf3_rd_data_stream),
-  .o_rd_data_valid(s_sf3_wr_data_valid),
+  .o_rd_data_valid(s_sf3_rd_data_valid),
   .o_reg_status(s_sf3_reg_status),
   .o_reg_flag(s_sf3_reg_flag)
   );

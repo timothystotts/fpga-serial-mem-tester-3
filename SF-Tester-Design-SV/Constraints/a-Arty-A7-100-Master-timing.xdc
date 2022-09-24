@@ -178,4 +178,4 @@ set_false_path -from [get_ports i_resetn] -to [all_registers]
 ## Power Measurements
 
 ## Internal asynchronous items requiring false_path
-set_false_path -to [get_pins u_uart_tx_only/u_fifo_uart_tx_0/bl.fifo_18_inst_bl.fifo_18_bl/RST]
+set_false_path -to [get_pins u_uart_tx_only/u_fifo_uart_tx_0/genblk5_0.fifo_18_bl.fifo_18_bl/RST]

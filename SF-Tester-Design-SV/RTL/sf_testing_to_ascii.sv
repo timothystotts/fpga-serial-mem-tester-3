@@ -52,7 +52,7 @@ module sf_testing_to_ascii
         input logic [31:0] i_addr_start,
         input logic [7:0] i_pattern_start,
         input logic [7:0] i_pattern_incr,
-        input logic [$clog2(parm_max_possible_byte_count)-1:0] i_error_count,
+        input integer i_error_count,
         input t_tester_state i_tester_pr_state,
         // ASCII outputs
         output logic [16*8-1:0] o_lcd_ascii_line1,

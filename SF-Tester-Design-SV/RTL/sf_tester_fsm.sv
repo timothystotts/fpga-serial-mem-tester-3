@@ -618,9 +618,9 @@ begin : p_tester_fsm_comb
             s_dat_wr_cntidx_val       = 0;
 
             if (! i_sf3_command_ready)
-                s_tester_nx_state <= ST_CMD_PAGE_BYTE;
+                s_tester_nx_state = ST_CMD_PAGE_BYTE;
             else
-                s_tester_nx_state <= ST_CMD_PAGE_START;
+                s_tester_nx_state = ST_CMD_PAGE_START;
         end
 
         ST_CMD_PAGE_BYTE: begin
