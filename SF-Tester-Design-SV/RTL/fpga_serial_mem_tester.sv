@@ -327,7 +327,7 @@ led_pwm_driver #(
   .i_color_led_red_value(s_color_led_red_value),
   .i_color_led_green_value(s_color_led_green_value),
   .i_color_led_blue_value(s_color_led_blue_value),
-  .i_color_led_lumin_value(s_basic_led_lumin_value),
+  .i_basic_led_lumin_value(s_basic_led_lumin_value),
   .eo_color_leds_r({eo_led3_r, eo_led2_r, eo_led1_r, eo_led0_r}),
   .eo_color_leds_g({eo_led3_g, eo_led2_g, eo_led1_g, eo_led0_g}),
   .eo_color_leds_b({eo_led3_b, eo_led2_b, eo_led1_b, eo_led0_b}),
@@ -404,7 +404,7 @@ pmod_cls_custom_driver #(
   ) u_pmod_cls_custom_driver (
   .i_clk_40mhz(s_clk_40mhz),
   .i_rst_40mhz(s_rst_40mhz),
-  .i_ce_2_5mhz(s_cls_ce_mhz),
+  .i_ce_mhz(s_cls_ce_mhz),
   .eo_sck_t(so_pmod_cls_sck_t),
   .eo_sck_o(so_pmod_cls_sck_o),
   .eo_csn_t(so_pmod_cls_csn_t),

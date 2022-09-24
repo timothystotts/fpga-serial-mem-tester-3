@@ -47,7 +47,7 @@ module pmod_sf3_quad_spi_solo
 		input logic i_srst,
 		input logic i_spi_ce_4x,
 		// Interface pmod_generic_qspi_solo_intf
-		pmod_generic_qspi_solo_intf.spi_sysdrv sdrv,
+		pmod_generic_qspi_solo_intf.qspi_sysdrv sdrv,
 		// FPGA system interface to SF3 operation
 		output logic o_command_ready,
 		input logic [31:0] i_address_of_cmd,
@@ -111,7 +111,7 @@ typedef logic [(c_sf3_drv_time_value_bits - 1):0] t_sf3_drv_time_value;
 
 localparam t_sf3_drv_time_value c_t_boot_init0 = parm_FCLK * 2 / 10000; // minimum of 200 us at 120 MHz
 localparam t_sf3_drv_time_value c_t_boot_init1 = 20; // a small arbitrary delay, FIXME
-localparam t_sf3_drv_time_Value c_t_boot_init2 = 20; // a small arbitrary delay, FIXME
+localparam t_sf3_drv_time_value c_t_boot_init2 = 20; // a small arbitrary delay, FIXME
 localparam t_sf3_drv_time_value c_t_cmd_addr = 4;
 localparam t_sf3_drv_time_value c_tmax = c_t_boot_init0 - 1;
 t_sf3_drv_time_value s_t;

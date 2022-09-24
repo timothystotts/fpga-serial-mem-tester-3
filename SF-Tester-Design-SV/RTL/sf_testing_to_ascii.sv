@@ -134,7 +134,7 @@ assign s_txt_ascii_line1 =
 always_comb
 begin : p_sf3mode_3char
     case (i_tester_pr_state)
-        ST_WAIT_BUTTON0_REL, ST_SET_PATTERN_A.
+        ST_WAIT_BUTTON0_REL, ST_SET_PATTERN_A,
         ST_WAIT_BUTTON1_REL, ST_SET_PATTERN_B,
         ST_WAIT_BUTTON2_REL, ST_SET_PATTERN_C,
         ST_WAIT_BUTTON3_REL, ST_SET_PATTERN_D,
