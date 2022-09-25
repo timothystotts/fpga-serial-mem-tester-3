@@ -97,7 +97,7 @@ architecture simultation of fpga_serial_mem_tester_s725_tb is
 	--	);
 	--end component N25Qxxx_wrapper;
 
-	constant c_clock_half_period : time := 5 ns;
+	constant c_clock_half_period : time := 83.333 ns;
 	signal run_clock             : boolean;
 
 	signal s_clk          : std_logic;
@@ -149,7 +149,7 @@ begin
 			parm_fast_simulation => 1
 		)
 		port map (
-			CLK100MHZ             => s_clk,
+			CLK12MHZ              => s_clk,
 			i_resetn              => s_rst,
 			eo_pmod_sf3_sck       => s_sf3_sck,
 			eo_pmod_sf3_csn       => s_sf3_csn,
