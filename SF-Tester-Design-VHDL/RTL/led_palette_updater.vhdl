@@ -60,7 +60,7 @@ end entity led_palette_updater;
 architecture rtl of led_palette_updater is
 begin
 
-	g_2rgb_4basic_updater : if parm_color_led_count = 2 generate
+	g_2rgb_4basic_updater : if (parm_color_led_count = 2) and (parm_basic_led_count = 4) generate
 	begin
 		-- Basic LED outputs to indicate test passed or failed
 		o_basic_led_lumin_value(0) <= x"FF" when i_test_pass = '1' else x"00";
@@ -132,7 +132,7 @@ begin
 		end process p_tester_fsm_progress;
 	end generate g_2rgb_4basic_updater;
 
-	g_4rgb_4basic_updater : if parm_color_led_count = 4 generate
+	g_4rgb_4basic_updater : if (parm_color_led_count = 4) and (parm_basic_led_count = 4) generate
 	begin
 		-- Basic LED outputs to indicate test passed or failed
 		o_basic_led_lumin_value(0) <= x"FF" when i_test_pass = '1' else x"00";
