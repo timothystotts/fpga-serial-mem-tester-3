@@ -237,7 +237,7 @@ begin : p_tester_fsm_comb
             o_sf3_cmd_erase_subsector = 1'b0;
             o_sf3_address_of_cmd      = 8'h00000000;
 
-            if (i_buttons_debounced == "0000")
+            if (i_buttons_debounced == 4'b0000)
                 s_tester_nx_state = ST_SET_PATTERN_A;
             else
                 s_tester_nx_state = ST_WAIT_BUTTON0_REL;
@@ -253,7 +253,7 @@ begin : p_tester_fsm_comb
             o_sf3_cmd_erase_subsector = 1'b0;
             o_sf3_address_of_cmd      = 8'h00000000;
 
-            if (i_buttons_debounced == "0000")
+            if (i_buttons_debounced == 4'b0000)
                 s_tester_nx_state = ST_SET_PATTERN_B;
             else
                 s_tester_nx_state = ST_WAIT_BUTTON1_REL;
@@ -269,7 +269,7 @@ begin : p_tester_fsm_comb
             o_sf3_cmd_erase_subsector = 1'b0;
             o_sf3_address_of_cmd      = 8'h00000000;
 
-            if (i_buttons_debounced == "0000")
+            if (i_buttons_debounced == 4'b0000)
                 s_tester_nx_state = ST_SET_PATTERN_C;
             else
                 s_tester_nx_state = ST_WAIT_BUTTON2_REL;
@@ -285,7 +285,7 @@ begin : p_tester_fsm_comb
             o_sf3_cmd_erase_subsector = 1'b0;
             o_sf3_address_of_cmd      = 8'h00000000;
 
-            if (i_buttons_debounced == "0000")
+            if (i_buttons_debounced == 4'b0000)
                 s_tester_nx_state = ST_SET_PATTERN_D;
             else
                 s_tester_nx_state = ST_WAIT_BUTTON3_REL;

@@ -717,7 +717,7 @@ begin: p_spi_fsm_inputs
 
 				/* only if on last bit, enqueue another byte */
 				/* only if RX FIFO is not full, enqueue another byte */
-				s_data_fifo_rx_we = ((s_t_delayed3 % 8 == 7) &&
+				s_data_fifo_rx_we <= ((s_t_delayed3 % 8 == 7) &&
 					(s_data_fifo_rx_full == 1'b0)) ? 1'b1 : 1'b0;
 			end : if_shift_in_rx_data_to_fifo
 			else begin : if_rx_hold_we_low_without_data
