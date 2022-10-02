@@ -611,7 +611,7 @@ begin : p_tester_fsm_comb
             // indicates command not ready.
             o_sf3_len_random_read     = 0;
             o_sf3_cmd_random_read     = 1'b0;
-            o_sf3_cmd_page_program    = 1'b0;
+            o_sf3_cmd_page_program    = 1'b1;
             o_sf3_cmd_erase_subsector = 1'b0;
             o_sf3_address_of_cmd      =
                 s_addr_start_aux + (s_i_aux * c_sf3_page_addr_incr);

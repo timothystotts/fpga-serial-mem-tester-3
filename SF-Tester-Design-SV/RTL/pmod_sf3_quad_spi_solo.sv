@@ -215,7 +215,7 @@ begin: p_fsm_comb
 	s_wait_len_val = s_wait_len_aux;
 	s_addr_byte_index_val = s_addr_byte_index_aux;
 	s_read_status_register_val = s_read_status_register_aux;
-	s_read_flag_status_register_val = s_read_status_register_aux;
+	s_read_flag_status_register_val = s_read_flag_status_register_aux;
 
 	o_rd_data_stream = '0;
 	o_rd_data_valid = 1'b0;
@@ -576,7 +576,7 @@ begin: p_fsm_comb
 		ST_PAGE_PROGR_ADDR: begin
 			o_command_ready = 1'b0;
 			sdrv.tx_data = i_address_of_cmd[(8 * (s_addr_byte_index_aux + 1) - 1)-:8];
-			sdrv.tx_len = c_n25q_txlen_cmd_any_page_program;
+			sdrv.tx_len = c_n25q_txlen_cmd_any_page_program + 256;
 			sdrv.tx_enqueue = sdrv.tx_ready;
 			sdrv.go_enhan = (s_addr_byte_index_aux == 0) ? 1'b1 : 1'b0;
 
