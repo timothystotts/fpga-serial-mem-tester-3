@@ -62,7 +62,7 @@ package sf_tester_fsm_pkg;
 
 	// system control of N25Q state machine
 	// localparam integer c_max_possible_byte_count = 67108864; // 512 Mbit
-	localparam integer c_max_possible_byte_count = 33555432; // 256 Mbit
+	localparam integer c_max_possible_byte_count = 33554432; // 256 Mbit
 	localparam integer c_total_iteration_count = 32;
 	localparam integer c_per_iteration_byte_count = c_max_possible_byte_count / c_total_iteration_count;
 	localparam integer c_last_starting_byte_addr = c_per_iteration_byte_count * (c_total_iteration_count - 1);

@@ -561,7 +561,7 @@ begin : p_tester_fsm_comb
             o_sf3_cmd_page_program    = 1'b0;
             o_sf3_cmd_erase_subsector = 1'b0;
             o_sf3_address_of_cmd      =
-                    s_addr_start_aux + (s_i_aux * c_sf3_subsector_addr_incr);
+                s_addr_start_aux + (s_i_aux * c_sf3_subsector_addr_incr);
 
             if (i_sf3_command_ready)
                 s_tester_nx_state = ST_CMD_ERASE_NEXT;
