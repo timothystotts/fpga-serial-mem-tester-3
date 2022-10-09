@@ -28,9 +28,10 @@
 -- SF Tester FSM module.
 ------------------------------------------------------------------------------*/
 `begin_keywords "1800-2012"
-//Timed Moore Machine-----------------------------------------------------------
-//Part 1: Module header:--------------------------------------------------------
 package sf_tester_fsm_pkg;
+	timeunit 1ns;
+	timeprecision 1ps;
+
 	// Function to determine the maximum value of timer T based upon whether
 	// the module is operating with fast simulation, or is synthesized to target.
 	// If simulating, the return is 3 milliseconds. If synthesized, the return is

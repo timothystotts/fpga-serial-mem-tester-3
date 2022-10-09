@@ -121,6 +121,8 @@ logic s_start_at_zero_aux;
 logic [$clog2(parm_tester_page_cnt_per_iter)-1:0] s_i_val;
 logic [$clog2(parm_tester_page_cnt_per_iter)-1:0] s_i_aux;
 
+localparam logic c_force_fake_errors = 1'b0; // only set this to 1'b1 to demo fake errors
+
 //Part 3: Statements------------------------------------------------------------
 // Outputs for other modules to read
 assign o_tester_pr_state = s_tester_pr_state;
@@ -750,9 +752,9 @@ begin : p_tester_fsm_comb
                 // Compare this iterations byte value
                 if (i_sf3_rd_data_stream != s_pattern_track_aux)
                     s_err_count_val = s_err_count_aux + 1;
-                else
-                    // FIXME: this is to show errors that did not occur to test the error reporting on the LCD and USB=UART
-                    s_err_count_val = s_err_count_aux + 0;
+                else // If c_force_fake_errors is non-zero, then fake errors are injected.
+                    s_err_count_val = s_err_count_aux +
+                        ((c_force_fake_errors && (i_sf3_rd_data_stream == 8'h07)) ? 2 : 0);
 
                 // Calculate the next iterations byte value
                 s_pattern_track_val = s_pattern_track_aux + s_pattern_incrval_aux;

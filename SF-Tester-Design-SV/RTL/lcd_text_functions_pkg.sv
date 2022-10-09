@@ -27,9 +27,10 @@
 -- \brief A timed FSM to feed display updates to a two-line LCD.
 ------------------------------------------------------------------------------*/
 `begin_keywords "1800-2012"
-//Timed Moore Machine-----------------------------------------------------------
-//Part 1: Module header:--------------------------------------------------------
 package lcd_text_functions_pkg;
+	timeunit 1ns;
+	timeprecision 1ps;
+
 	// A re-entrant function that converts a 4-bit vector to an 8-bit ASCII
 	// hexadecimal character.
 	function automatic [7:0] ascii_of_hdigit(input logic [3:0] bchex_val);
