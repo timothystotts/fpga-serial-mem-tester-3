@@ -35,7 +35,7 @@ package pmod_quad_spi_solo_pkg;
 	// LOG2 of the TX FIFO max count
 	localparam integer c_pmod_sf3_tx_len_bits = 11;
 	// LOG2 of max Wait Cycles count between end of TX and start of RX
-	localparam integer c_pmod_sf3_wait_cyc_bits = 2;
+	localparam integer c_pmod_sf3_wait_cyc_bits = 9;
 	// LOG2 of the RX FIFO max count
 	localparam integer c_pmod_sf3_rx_len_bits = 11;
 

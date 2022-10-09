@@ -32,11 +32,11 @@
 `begin_keywords "1800-2012"
 //------------------------------------------------------------------------------
 interface pmod_generic_qspi_solo_intf #(
-	parameter integer parm_tx_len_bits = 11,
+	parameter integer parm_tx_len_bits = 9,
 	/* LOG2 of max Wait Cycles count between end of TX and start of RX */
-	integer parm_wait_cyc_bits = 2,
+	integer parm_wait_cyc_bits = 9,
 	/* LOG2 of the RX FIFO max count */
-	integer parm_rx_len_bits = 11 /* now ignored due to usage of MACRO */
+	integer parm_rx_len_bits = 9 /* now ignored due to usage of MACRO */
 	) ();
 
 	timeunit 1ns;
