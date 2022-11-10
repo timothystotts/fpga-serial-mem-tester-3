@@ -50,8 +50,8 @@ module fpga_serial_mem_tester_s725
     output logic eo_pmod_sf3_csn,
     inout logic eio_pmod_sf3_copi_dq0,
     inout logic eio_pmod_sf3_cipo_dq1,
-  inout logic eio_pmod_sf3_wrpn_dq2,
-  inout logic eio_pmod_sf3_hldn_dq3,
+    inout logic eio_pmod_sf3_wrpn_dq2,
+    inout logic eio_pmod_sf3_hldn_dq3,
     // blue LEDs of the multicolor
     output logic eo_led0_b,
     output logic eo_led1_b,
@@ -81,7 +81,7 @@ module fpga_serial_mem_tester_s725
     output logic eo_pmod_cls_sck,
     output logic eo_pmod_cls_dq0,
     input logic ei_pmod_cls_dq1,
-    // Arty A7-100T UART TX and RX signals
+    // Arty S7-25 UART TX and RX signals
     output logic eo_uart_tx,
     input logic ei_uart_rx);
 
@@ -119,16 +119,6 @@ logic s_clk_clkfbout;
 logic s_clk_pwrdwn;
 logic s_clk_resetin;
 
-// Definitions of the Quad SPI driver to pass to the SF3 driver
-localparam integer c_quad_spi_tx_fifo_count_bits = 9;
-localparam integer c_quad_spi_rx_fifo_count_bits = 9;
-localparam integer c_quad_spi_wait_count_bits = 9;
-
-// Definitions of the Standard SPI driver to pass to the CLS driver
-localparam integer c_stand_spi_tx_fifo_count_bits = 11;
-localparam integer c_stand_spi_rx_fifo_count_bits = 11;
-localparam integer c_stand_spi_wait_count_bits = 2;
-
 // SPI signals to external tri-state
 logic sio_sf3_sck_o;
 logic sio_sf3_sck_t;
@@ -161,13 +151,6 @@ logic [7:0] s_sf3_rd_data_stream;
 logic s_sf3_rd_data_valid;
 logic [7:0] s_sf3_reg_status;
 logic [7:0] s_sf3_reg_flag;
-
-// Display update FSM state declarations
-typedef enum logic [1:0] {ST_CLS_IDLE, ST_CLS_CLEAR, ST_CLS_LINE1,
-  ST_CLS_LINE2} t_cls_update_state;
-
-t_cls_update_state s_cls_upd_pr_state;
-t_cls_update_state s_cls_upd_nx_state;
 
 // CLS Clock Enable speed for driving CE of CLS customer driver
 // and text feed.

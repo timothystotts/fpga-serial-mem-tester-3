@@ -97,7 +97,7 @@ architecture simultation of fpga_serial_mem_tester_s725_tb is
 	--	);
 	--end component N25Qxxx_wrapper;
 
-	constant c_clock_half_period : time := 83.333 ns;
+	constant c_clock_half_period : time := 41.666 ns;
 	signal run_clock             : boolean;
 
 	signal s_clk          : std_logic;
@@ -132,6 +132,8 @@ architecture simultation of fpga_serial_mem_tester_s725_tb is
 	signal s_cls_cipo     : std_logic;
 	signal s_uart_tx      : std_logic;
 	signal s_uart_rx      : std_logic;
+	signal s_seq          : unsigned(7 downto 0);
+	signal s_out          : unsigned(7 downto 0);
 begin
 	-- N25Q flash part model
 	--u_n25q_part : N25Qxxx_wrapper
@@ -210,6 +212,8 @@ begin
 		variable v_seq       : unsigned(7 downto 0) := x"00";
 		variable v_cnt_msb   : natural range 0 to 7 := 0;
 		variable v_track_cmd : std_logic            := '1';
+		variable v_byte_cnt  : natural              := 0;
+		variable v_out       : unsigned(7 downto 0) := x"00";
 	begin
 		s_sf3_hldn_dq3 <= 'Z';
 		s_sf3_wrpn_dq2 <= 'Z';
@@ -228,15 +232,24 @@ begin
 					if (v_cnt_msb > 0) then
 						v_cnt_msb := v_cnt_msb - 1;
 						if (v_track_cmd = '0') then
-							s_sf3_cipo_dq1 <= std_logic(v_seq(v_cnt_msb));
+							s_sf3_cipo_dq1 <= std_logic(v_out(v_cnt_msb));
 						else
 							s_sf3_cipo_dq1 <= 'Z';
 						end if;
 					else
-						v_cnt_msb      := 7;
-						v_track_cmd    := '0';
-						v_seq          := v_seq + unsigned'(x"01");
-						s_sf3_cipo_dq1 <= std_logic(v_seq(v_cnt_msb));
+						v_cnt_msb   := 7;
+						v_track_cmd := '0';
+						v_seq       := v_seq + unsigned'(x"01");
+						v_byte_cnt  := v_byte_cnt + 1;
+
+						if (v_byte_cnt < 2) then
+							-- status and flag bits to say not busy
+							v_out := '1' & v_seq(6 downto 1) & '0';
+						else
+							v_out := v_seq;
+						end if;
+
+						s_sf3_cipo_dq1 <= std_logic(v_out(v_cnt_msb));
 					end if;
 				end if;
 			-- on the event of s_sf3_sck 4x clock or change of slave select, test if
@@ -250,13 +263,17 @@ begin
 					s_sf3_cipo_dq1 <= 'Z';
 					s_sf3_copi_dq0 <= 'Z';
 					v_track_cmd    := '1';
-					-- start one nibble before 0x00 as to simulate a working Flash
-					-- chip response for a Quad I/O READ command reponse with a
-					-- single SPI clock wait cycle after the 5 byte command.
-					v_seq     := x"EF";
-					v_cnt_msb := 7;
+					-- start 6 bytes before x"00" so that the N25Q READ command reads
+					-- back pattern A which starts are x"00" and increments by x"01"
+					v_seq      := x"FA";
+					v_out      := x"FA";
+					v_cnt_msb  := 7;
+					v_byte_cnt := 0;
 				end if;
 			end if;
+
+			s_seq <= v_seq;
+			s_out <= v_out;			
 		end loop loop_forever;
 	end process p_extend_seq_dat;
 
@@ -295,7 +312,7 @@ begin
 		s_rst <= '1';
 
 		wait_loop_run_b : for iter2 in 1 to 60 loop
-			wait_loop_run_a : for iter in 1 to 100000000 loop
+			wait_loop_run_a : for iter in 1 to (100000000 * 12 / 100) loop
 				wait until rising_edge(s_clk);
 			end loop wait_loop_run_a;
 		end loop wait_loop_run_b;
