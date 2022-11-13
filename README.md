@@ -31,14 +31,14 @@ Additionally, the Xilinx Zynq design targets the
 
 Two peripherals are used: Digilent Inc. Pmod SF3, Digilent Inc. Pmod CLS.
 
-The design is broken into four groupings.
+The design is broken into five groupings.
 The first group targets the Digilent Inc. Arty A7-100 development board.
 The second group targets the Digilent Inc. Arty S7-25 development board.
 The third and fourth groups target either the
 Digilent Inc. Arty A7-100 development board or
 the Digilent Inc. Arty S7-25 development board.
 The last group targets the Digilent Inc. Zybo Z7-20 development board.
-The projects are likely portable to the smaller Arty A7-35 and Zybo Z7-10
+The projects are likely portable to the smaller Arty A7-35 and Zybo Z7-10,
 respectively as the designs are low resource utilization.
 
 The folder SF-Tester-Design-MB-A7 contains a Xilinx Vivado IP Integrator plus
