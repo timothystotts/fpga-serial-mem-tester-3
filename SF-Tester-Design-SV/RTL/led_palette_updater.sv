@@ -129,7 +129,7 @@ generate
 				end
 
 				default : // ST_WAIT_BUTTON_DEP
-					o_color_led_red_value = {2{8'h00}};
+					o_color_led_red_value = {2{8'hFF}};
 			endcase
 
 		end : p_tester_fsm_progress
@@ -172,7 +172,7 @@ generate
 				ST_CMD_ERASE_DONE : begin
 					o_color_led_red_value[7-:8] = 8'h70;
 					o_color_led_green_value[7-:8] = 8'h10;
-					o_color_led_blue_value[7-:8] = 8'h80;
+					o_color_led_blue_value[7-:8] = 8'h00;
 				end
 
 				ST_CMD_PAGE_START, ST_CMD_PAGE_BYTE, ST_CMD_PAGE_WAIT,
@@ -185,7 +185,7 @@ generate
 				ST_CMD_PAGE_DONE : begin
 					o_color_led_red_value[15-:8] = 8'h70;
 					o_color_led_green_value[15-:8] = 8'h10;
-					o_color_led_blue_value[15-:8] = 8'h80;
+					o_color_led_blue_value[15-:8] = 8'h00;
 				end
 
 				ST_CMD_READ_START, ST_CMD_READ_BYTE, ST_CMD_READ_WAIT,
@@ -198,7 +198,7 @@ generate
 				ST_CMD_READ_DONE : begin
 					o_color_led_red_value[23-:8] = 8'h70;
 					o_color_led_green_value[23-:8] = 8'h10;
-					o_color_led_blue_value[23-:8] = 8'h80;
+					o_color_led_blue_value[23-:8] = 8'h00;
 				end
 
 				ST_DISPLAY_FINAL : begin
@@ -208,7 +208,7 @@ generate
 				end
 
 				default : // ST_WAIT_BUTTON_DEP
-					o_color_led_red_value = {4{8'h00}};
+					o_color_led_red_value = {4{8'hFF}};
 			endcase
 
 		end : p_tester_fsm_progress
