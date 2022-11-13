@@ -184,7 +184,7 @@ architecture spi_hybrid_fsm of pmod_generic_qspi_solo is
 	signal s_data_fifo_tx_we          : std_logic;
 	signal s_data_fifo_tx_full        : std_logic;
 	signal s_data_fifo_tx_empty       : std_logic;
-	signal s_data_fifo_tx_valid       : std_logic;
+	--signal s_data_fifo_tx_valid       : std_logic;
 	signal s_data_fifo_tx_rdcount     : std_logic_vector(10 downto 0);
 	signal s_data_fifo_tx_wrcount     : std_logic_vector(10 downto 0);
 	signal s_data_fifo_tx_almostfull  : std_logic;
@@ -413,7 +413,7 @@ begin
 				s_go_enhan_aux  <= '0';
 
 			elsif (s_spi_ce_4x = '1') then
-				-- no clock enable as this is a system-side interface
+				-- no phase counter clock enable as this is a system-side interface
 				s_dat_pr_state <= s_dat_nx_state;
 
 				-- auxiliary assignments
@@ -526,7 +526,7 @@ begin
 		-- the 5 other pins are controlled explicitly within each state
 		eio_sck_o <= s_spi_clk_1x;
 		eio_sck_t <= '0';
-		-- default to holding the value of the auxiliary registers
+		-- default to not reading from the TX FIFO
 		s_data_fifo_tx_re <= '0';
 
 		case (s_spi_pr_state) is
@@ -580,8 +580,6 @@ begin
 				-- hold not reading the TX FIFO
 				s_data_fifo_tx_re <= s_spi_clk_ce3 when ((s_t = c_t_enhan_wait_ss - s_t_inc) and 
 					(s_data_fifo_tx_empty = '0')) else '0';
-				-- machine is not idle
-				s_spi_idle <= '0';
 
 				-- wait for time to hold chip select value
 				if (s_t = c_t_enhan_wait_ss - s_t_inc) then
@@ -591,19 +589,21 @@ begin
 				end if;
 
 			when ST_TX_ENHAN =>
-				-- run clock
 				-- assert chip select
 				eio_csn_o <= '0';
 				eio_csn_t <= '0';
 
 				-- output currently dequeued byte
 				eio_copi_dq0_o <= s_data_fifo_tx_out(7 - (s_t mod 8)) when (s_t < 8 * s_tx_len_aux) else '0';
-
 				eio_copi_dq0_t <= '0';
+
+				-- High-Z CIPO
 				eio_cipo_dq1_o <= '0';
 				eio_cipo_dq1_t <= '1';
+				-- Write Protect not asserted
 				eio_wrpn_dq2_o <= '1';
 				eio_wrpn_dq2_t <= '0';
+				-- Hold not asserted
 				eio_hldn_dq3_o <= '1';
 				eio_hldn_dq3_t <= '0';
 
@@ -629,14 +629,13 @@ begin
 				end if;
 
 			when ST_WAIT_ENHAN =>
-				-- run clock
 				-- assert chip select
 				eio_csn_o <= '0';
 				eio_csn_t <= '0';
-				-- zero MOSI
+				-- zero COPI
 				eio_copi_dq0_o <= '0';
 				eio_copi_dq0_t <= '0';
-				-- High-Z MISO
+				-- High-Z CIPO
 				eio_cipo_dq1_o <= '0';
 				eio_cipo_dq1_t <= '1';
 				-- Write Protect not asserted
@@ -653,7 +652,6 @@ begin
 				end if;
 
 			when ST_RX_ENHAN =>
-				-- run clock
 				-- assert chip select
 				eio_csn_o <= '0';
 				eio_csn_t <= '0';
@@ -685,10 +683,10 @@ begin
 				-- assert chip select
 				eio_csn_o <= '0';
 				eio_csn_t <= '0';
-				-- zero MOSI
+				-- zero COPI
 				eio_copi_dq0_o <= '0';
 				eio_copi_dq0_t <= '0';
-				-- High-Z MISO
+				-- High-Z CIPO
 				eio_cipo_dq1_o <= '0';
 				eio_cipo_dq1_t <= '1';
 				-- Write Protect not asserted
@@ -709,13 +707,13 @@ begin
 				-- halt clock
 				eio_sck_o <= '0';
 				eio_sck_t <= '0';
-				-- assert chip select
+				-- deassert chip select
 				eio_csn_o <= '1';
 				eio_csn_t <= '0';
-				-- zero MOSI
+				-- zero COPI
 				eio_copi_dq0_o <= '0';
 				eio_copi_dq0_t <= '0';
-				-- High-Z MISO
+				-- High-Z CIPO
 				eio_cipo_dq1_o <= '0';
 				eio_cipo_dq1_t <= '1';
 				-- Write Protect not asserted
@@ -725,7 +723,7 @@ begin
 				eio_hldn_dq3_o <= '1';
 				eio_hldn_dq3_t <= '0';
 
-				-- wait for time to hold chip select value
+				-- wait for time to hold chip select value deasserted
 				if (s_t = c_t_enhan_wait_ss - s_t_inc) then
 					s_spi_nx_state <= ST_IDLE_ENHAN;
 				else
@@ -733,19 +731,27 @@ begin
 				end if;
 
 			when others => -- ST_IDLE_ENHAN
-				s_spi_idle     <= '1';
+				-- hald clock at Mode 0
 				eio_sck_o      <= '0';
 				eio_sck_t      <= '0';
+				-- deasserted chip select
 				eio_csn_o      <= '1';
 				eio_csn_t      <= '0';
+				-- zero value for COPI
 				eio_copi_dq0_o <= '0';
 				eio_copi_dq0_t <= '0';
+				-- High-Z CIPO
 				eio_cipo_dq1_o <= '0';
 				eio_cipo_dq1_t <= '1';
+				-- Write Protect not asserted
 				eio_wrpn_dq2_o <= '1';
 				eio_wrpn_dq2_t <= '0';
+				-- Hold not asserted
 				eio_hldn_dq3_o <= '1';
 				eio_hldn_dq3_t <= '0';
+
+				-- machine is idle
+				s_spi_idle     <= '1';
 
 				if (s_go_enhan = '1') then
 					s_spi_nx_state <= ST_START_D_ENHAN;
@@ -756,9 +762,9 @@ begin
 
 	end process p_spi_fsm_comb;
 
-	-- capture the RX inputs into the RX fifo
-	-- note that the RX inputs are delayed by 3 clk_4x clock cycles
-	-- before the delay, the falling edge would occur at the capture of
+	-- Captures the RX inputs into the RX fifo.
+	-- Note that the RX inputs are delayed by 3 clk_4x clock cycles.
+	-- Before the delay, the falling edge would occur at the capture of
 	-- clock enable 0; but with the delay of registering output and double
 	-- registering input, the FSM state is delayed by 3 clock cycles for
 	-- RX only and the clock enable to process on the effective falling edge of
@@ -771,8 +777,6 @@ begin
 				s_data_fifo_rx_we             <= '0';
 				s_data_fifo_rx_in(7 downto 0) <= x"00";
 			else
-				s_data_fifo_rx_we <= '0';
-
 				if (s_spi_clk_ce3 = '1') then
 					if (s_spi_pr_state_delayed3 = ST_RX_ENHAN) then
 						-- input current byte to enqueue, one bit at a time, shifting

@@ -125,7 +125,6 @@ architecture hybrid_fsm of pmod_sf3_quad_spi_solo is
 	constant c_t_boot_init0 : natural := parm_FCLK * 2 / 10000; -- minimum of 200 us at 120 MHz
 	constant c_t_boot_init1 : natural := 20;                    -- a small arbitrary delay, FIXME
 	constant c_t_boot_init2 : natural := 20;                    -- a small arbitrary delay, FIXME
-
 	constant c_t_cmd_addr : natural := 4;
 	constant c_tmax       : natural := c_t_boot_init0 - 1;
 	signal s_t            : natural range 0 to c_tmax;
@@ -158,7 +157,7 @@ architecture hybrid_fsm of pmod_sf3_quad_spi_solo is
 	constant c_n25q_txlen_cmd_any_erase_subsector           : natural := 5;
 	constant c_n25q_txlen_cmd_any_page_program              : natural := 5;
 
-	constant c_addr_byte_index_preset : natural := 3;
+	constant c_addr_byte_index_preset : integer := 3;
 
 	signal s_wait_len_val                  : integer range -1 to 511;
 	signal s_wait_len_aux                  : integer range -1 to 511;
@@ -209,6 +208,10 @@ begin
 		end if;
 	end process p_fsm_state_aux;
 
+	-- FSM combinatorial logic providing multiple outputs, assigned in every state,
+	-- as well as changes in auxiliary values, and calculation of the next FSM
+	-- state. Refer to the FSM state machine drawings in document:
+	-- \ref SF-Tester-Design-Diagrams.pdf .
 	p_fsm_comb : process(s_pr_state, i_tx_ready, s_t, i_rx_avail, i_spi_idle,
 			i_address_of_cmd, i_len_random_read, i_rx_data, i_rx_valid,
 			s_wait_len_aux, s_addr_byte_index_aux,
@@ -478,7 +481,7 @@ begin
 				if (i_tx_ready = '1') then
 					s_nx_state <= ST_ERASE_ADDR;
 				else
-					s_nx_state <= ST_ERASE_ADDR;
+					s_nx_state <= ST_ERASE_CMD;
 				end if;
 
 			when ST_ERASE_ADDR =>

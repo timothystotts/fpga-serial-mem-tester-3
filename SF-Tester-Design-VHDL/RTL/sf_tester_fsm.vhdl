@@ -21,9 +21,10 @@
 -- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 -- SOFTWARE.
 --------------------------------------------------------------------------------
--- \file acl_tester_fsm.vhdl
+-- \file sf_tester_fsm.vhdl
 --
--- \brief A simple text byte feeder to the UART TX module.
+-- \brief A package to contain constants, types and functions for the
+-- SF Tester FSM module.
 --------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
@@ -68,7 +69,8 @@ package sf_tester_fsm_pkg is
 	constant c_tester_page_cnt_per_iter      : natural := 131072 / c_total_iteration_count;
 
 	-- Testing patterns, the starting byte value and the byte increment value, causing
-	-- either a sequential counting pattern or a pseudo-random counting pattern.
+	-- either a sequential counting pattern or a pseudo-random counting pattern. All
+	-- 8-bit values will occur in the sequence if the increment is a prime number.
 	constant c_tester_pattern_startval_a : unsigned(7 downto 0) := x"00";
 	constant c_tester_pattern_incrval_a  : unsigned(7 downto 0) := x"01";
 

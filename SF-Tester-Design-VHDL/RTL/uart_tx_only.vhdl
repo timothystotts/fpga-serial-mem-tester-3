@@ -221,6 +221,7 @@ begin
 				s_data_val        <= s_data_aux;
 				s_i_val           <= s_i_aux + 1;
 
+				-- Note that it may be more efficient to make this a shift register.
 				so_uart_tx <= s_data_aux(s_i_aux);
 
 				if (s_i_aux = 7) then

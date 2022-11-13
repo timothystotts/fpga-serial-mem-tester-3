@@ -243,7 +243,6 @@ begin
 	--              Artix-7
 	-- Xilinx HDL Language Template, version 2019.1
 
-	-- TODO: recalculate the MMCM with a 12 MHz input clock instead of a 100 MHz clock
 	MMCME2_BASE_inst : MMCME2_BASE
 		generic map (
 			BANDWIDTH       => "OPTIMIZED", -- Jitter programming (OPTIMIZED, HIGH, LOW)

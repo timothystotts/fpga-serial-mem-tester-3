@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="fpga_serial_mem_tester_s725_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="fpga_serial_mem_tester_s725_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000000000 ms"></ZoomStartTime>
+      <ZoomEndTime time="46.009972162 ms"></ZoomEndTime>
+      <Cursor1Time time="46.009972161 ms"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="276"></NameColumnWidth>
+      <ValueColumnWidth column_width="104"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="138" />
+   <wvobject fp_name="divider258" type="divider">
+      <obj_property name="label">Pmod CLS Custom</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/i_clk_40mhz">
+      <obj_property name="ElementShortName">i_clk_40mhz</obj_property>
+      <obj_property name="ObjectShortName">i_clk_40mhz</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/i_rst_40mhz">
+      <obj_property name="ElementShortName">i_rst_40mhz</obj_property>
+      <obj_property name="ObjectShortName">i_rst_40mhz</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/i_ce_mhz">
+      <obj_property name="ElementShortName">i_ce_mhz</obj_property>
+      <obj_property name="ObjectShortName">i_ce_mhz</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/eo_sck_t">
+      <obj_property name="ElementShortName">eo_sck_t</obj_property>
+      <obj_property name="ObjectShortName">eo_sck_t</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/eo_sck_o">
+      <obj_property name="ElementShortName">eo_sck_o</obj_property>
+      <obj_property name="ObjectShortName">eo_sck_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/eo_csn_t">
+      <obj_property name="ElementShortName">eo_csn_t</obj_property>
+      <obj_property name="ObjectShortName">eo_csn_t</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/eo_csn_o">
+      <obj_property name="ElementShortName">eo_csn_o</obj_property>
+      <obj_property name="ObjectShortName">eo_csn_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/eo_copi_t">
+      <obj_property name="ElementShortName">eo_copi_t</obj_property>
+      <obj_property name="ObjectShortName">eo_copi_t</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/eo_copi_o">
+      <obj_property name="ElementShortName">eo_copi_o</obj_property>
+      <obj_property name="ObjectShortName">eo_copi_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/ei_cipo">
+      <obj_property name="ElementShortName">ei_cipo</obj_property>
+      <obj_property name="ObjectShortName">ei_cipo</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/o_command_ready">
+      <obj_property name="ElementShortName">o_command_ready</obj_property>
+      <obj_property name="ObjectShortName">o_command_ready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/i_cmd_wr_clear_display">
+      <obj_property name="ElementShortName">i_cmd_wr_clear_display</obj_property>
+      <obj_property name="ObjectShortName">i_cmd_wr_clear_display</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/i_cmd_wr_text_line1">
+      <obj_property name="ElementShortName">i_cmd_wr_text_line1</obj_property>
+      <obj_property name="ObjectShortName">i_cmd_wr_text_line1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/i_cmd_wr_text_line2">
+      <obj_property name="ElementShortName">i_cmd_wr_text_line2</obj_property>
+      <obj_property name="ObjectShortName">i_cmd_wr_text_line2</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/i_dat_ascii_line1">
+      <obj_property name="ElementShortName">i_dat_ascii_line1[127:0]</obj_property>
+      <obj_property name="ObjectShortName">i_dat_ascii_line1[127:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/i_dat_ascii_line2">
+      <obj_property name="ElementShortName">i_dat_ascii_line2[127:0]</obj_property>
+      <obj_property name="ObjectShortName">i_dat_ascii_line2[127:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/sio_cls_sck_fsm_o">
+      <obj_property name="ElementShortName">sio_cls_sck_fsm_o</obj_property>
+      <obj_property name="ObjectShortName">sio_cls_sck_fsm_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/sio_cls_sck_fsm_t">
+      <obj_property name="ElementShortName">sio_cls_sck_fsm_t</obj_property>
+      <obj_property name="ObjectShortName">sio_cls_sck_fsm_t</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/sio_cls_csn_fsm_o">
+      <obj_property name="ElementShortName">sio_cls_csn_fsm_o</obj_property>
+      <obj_property name="ObjectShortName">sio_cls_csn_fsm_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/sio_cls_csn_fsm_t">
+      <obj_property name="ElementShortName">sio_cls_csn_fsm_t</obj_property>
+      <obj_property name="ObjectShortName">sio_cls_csn_fsm_t</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/sio_cls_copi_fsm_o">
+      <obj_property name="ElementShortName">sio_cls_copi_fsm_o</obj_property>
+      <obj_property name="ObjectShortName">sio_cls_copi_fsm_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/sio_cls_copi_fsm_t">
+      <obj_property name="ElementShortName">sio_cls_copi_fsm_t</obj_property>
+      <obj_property name="ObjectShortName">sio_cls_copi_fsm_t</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/sio_cls_cipo_meta_i">
+      <obj_property name="ElementShortName">sio_cls_cipo_meta_i</obj_property>
+      <obj_property name="ObjectShortName">sio_cls_cipo_meta_i</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/sio_cls_cipo_sync_i">
+      <obj_property name="ElementShortName">sio_cls_cipo_sync_i</obj_property>
+      <obj_property name="ObjectShortName">sio_cls_cipo_sync_i</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/parm_fast_simulation">
+      <obj_property name="ElementShortName">parm_fast_simulation[31:0]</obj_property>
+      <obj_property name="ObjectShortName">parm_fast_simulation[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/parm_FCLK">
+      <obj_property name="ElementShortName">parm_FCLK[31:0]</obj_property>
+      <obj_property name="ObjectShortName">parm_FCLK[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/parm_FCLK_ce">
+      <obj_property name="ElementShortName">parm_FCLK_ce[31:0]</obj_property>
+      <obj_property name="ObjectShortName">parm_FCLK_ce[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/parm_ext_spi_clk_ratio">
+      <obj_property name="ElementShortName">parm_ext_spi_clk_ratio[31:0]</obj_property>
+      <obj_property name="ObjectShortName">parm_ext_spi_clk_ratio[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider287" type="divider">
+      <obj_property name="label">Pmod CLS SPI</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/eo_sck_o">
+      <obj_property name="ElementShortName">eo_sck_o</obj_property>
+      <obj_property name="ObjectShortName">eo_sck_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/eo_sck_t">
+      <obj_property name="ElementShortName">eo_sck_t</obj_property>
+      <obj_property name="ObjectShortName">eo_sck_t</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/eo_csn_o">
+      <obj_property name="ElementShortName">eo_csn_o</obj_property>
+      <obj_property name="ObjectShortName">eo_csn_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/eo_csn_t">
+      <obj_property name="ElementShortName">eo_csn_t</obj_property>
+      <obj_property name="ObjectShortName">eo_csn_t</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/eo_copi_o">
+      <obj_property name="ElementShortName">eo_copi_o</obj_property>
+      <obj_property name="ObjectShortName">eo_copi_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/eo_copi_t">
+      <obj_property name="ElementShortName">eo_copi_t</obj_property>
+      <obj_property name="ObjectShortName">eo_copi_t</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/ei_cipo_i">
+      <obj_property name="ElementShortName">ei_cipo_i</obj_property>
+      <obj_property name="ObjectShortName">ei_cipo_i</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/i_ext_spi_clk_x">
+      <obj_property name="ElementShortName">i_ext_spi_clk_x</obj_property>
+      <obj_property name="ObjectShortName">i_ext_spi_clk_x</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/i_srst">
+      <obj_property name="ElementShortName">i_srst</obj_property>
+      <obj_property name="ObjectShortName">i_srst</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/i_spi_ce_4x">
+      <obj_property name="ElementShortName">i_spi_ce_4x</obj_property>
+      <obj_property name="ObjectShortName">i_spi_ce_4x</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_spi_pr_state">
+      <obj_property name="ElementShortName">s_spi_pr_state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">s_spi_pr_state[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_spi_nx_state">
+      <obj_property name="ElementShortName">s_spi_nx_state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">s_spi_nx_state[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_spi_pr_state_delayed1">
+      <obj_property name="ElementShortName">s_spi_pr_state_delayed1[2:0]</obj_property>
+      <obj_property name="ObjectShortName">s_spi_pr_state_delayed1[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_spi_pr_state_delayed2">
+      <obj_property name="ElementShortName">s_spi_pr_state_delayed2[2:0]</obj_property>
+      <obj_property name="ObjectShortName">s_spi_pr_state_delayed2[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_spi_pr_state_delayed3">
+      <obj_property name="ElementShortName">s_spi_pr_state_delayed3[2:0]</obj_property>
+      <obj_property name="ObjectShortName">s_spi_pr_state_delayed3[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_dat_pr_state">
+      <obj_property name="ElementShortName">s_dat_pr_state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">s_dat_pr_state[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_dat_nx_state">
+      <obj_property name="ElementShortName">s_dat_nx_state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">s_dat_nx_state[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_t">
+      <obj_property name="ElementShortName">s_t[12:0]</obj_property>
+      <obj_property name="ObjectShortName">s_t[12:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_t_delayed1">
+      <obj_property name="ElementShortName">s_t_delayed1[12:0]</obj_property>
+      <obj_property name="ObjectShortName">s_t_delayed1[12:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_t_delayed2">
+      <obj_property name="ElementShortName">s_t_delayed2[12:0]</obj_property>
+      <obj_property name="ObjectShortName">s_t_delayed2[12:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_t_delayed3">
+      <obj_property name="ElementShortName">s_t_delayed3[12:0]</obj_property>
+      <obj_property name="ObjectShortName">s_t_delayed3[12:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_spi_ce_4x">
+      <obj_property name="ElementShortName">s_spi_ce_4x</obj_property>
+      <obj_property name="ObjectShortName">s_spi_ce_4x</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_spi_clk_1x">
+      <obj_property name="ElementShortName">s_spi_clk_1x</obj_property>
+      <obj_property name="ObjectShortName">s_spi_clk_1x</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_spi_clk_ce0">
+      <obj_property name="ElementShortName">s_spi_clk_ce0</obj_property>
+      <obj_property name="ObjectShortName">s_spi_clk_ce0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_spi_clk_ce1">
+      <obj_property name="ElementShortName">s_spi_clk_ce1</obj_property>
+      <obj_property name="ObjectShortName">s_spi_clk_ce1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_spi_clk_ce2">
+      <obj_property name="ElementShortName">s_spi_clk_ce2</obj_property>
+      <obj_property name="ObjectShortName">s_spi_clk_ce2</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_spi_clk_ce3">
+      <obj_property name="ElementShortName">s_spi_clk_ce3</obj_property>
+      <obj_property name="ObjectShortName">s_spi_clk_ce3</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_go_stand">
+      <obj_property name="ElementShortName">s_go_stand</obj_property>
+      <obj_property name="ObjectShortName">s_go_stand</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_tx_len_val">
+      <obj_property name="ElementShortName">s_tx_len_val[10:0]</obj_property>
+      <obj_property name="ObjectShortName">s_tx_len_val[10:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_tx_len_aux">
+      <obj_property name="ElementShortName">s_tx_len_aux[10:0]</obj_property>
+      <obj_property name="ObjectShortName">s_tx_len_aux[10:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_rx_len_val">
+      <obj_property name="ElementShortName">s_rx_len_val[10:0]</obj_property>
+      <obj_property name="ObjectShortName">s_rx_len_val[10:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_rx_len_aux">
+      <obj_property name="ElementShortName">s_rx_len_aux[10:0]</obj_property>
+      <obj_property name="ObjectShortName">s_rx_len_aux[10:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_wait_cyc_val">
+      <obj_property name="ElementShortName">s_wait_cyc_val[1:0]</obj_property>
+      <obj_property name="ObjectShortName">s_wait_cyc_val[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_wait_cyc_aux">
+      <obj_property name="ElementShortName">s_wait_cyc_aux[1:0]</obj_property>
+      <obj_property name="ObjectShortName">s_wait_cyc_aux[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_go_stand_val">
+      <obj_property name="ElementShortName">s_go_stand_val</obj_property>
+      <obj_property name="ObjectShortName">s_go_stand_val</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_go_stand_aux">
+      <obj_property name="ElementShortName">s_go_stand_aux</obj_property>
+      <obj_property name="ObjectShortName">s_go_stand_aux</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_spi_idle">
+      <obj_property name="ElementShortName">s_spi_idle</obj_property>
+      <obj_property name="ObjectShortName">s_spi_idle</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_data_fifo_rx_in">
+      <obj_property name="ElementShortName">s_data_fifo_rx_in[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_data_fifo_rx_in[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_data_fifo_rx_out">
+      <obj_property name="ElementShortName">s_data_fifo_rx_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_data_fifo_rx_out[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_data_fifo_rx_re">
+      <obj_property name="ElementShortName">s_data_fifo_rx_re</obj_property>
+      <obj_property name="ObjectShortName">s_data_fifo_rx_re</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_data_fifo_rx_we">
+      <obj_property name="ElementShortName">s_data_fifo_rx_we</obj_property>
+      <obj_property name="ObjectShortName">s_data_fifo_rx_we</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_data_fifo_rx_full">
+      <obj_property name="ElementShortName">s_data_fifo_rx_full</obj_property>
+      <obj_property name="ObjectShortName">s_data_fifo_rx_full</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_data_fifo_rx_empty">
+      <obj_property name="ElementShortName">s_data_fifo_rx_empty</obj_property>
+      <obj_property name="ObjectShortName">s_data_fifo_rx_empty</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_data_fifo_rx_valid">
+      <obj_property name="ElementShortName">s_data_fifo_rx_valid</obj_property>
+      <obj_property name="ObjectShortName">s_data_fifo_rx_valid</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_data_fifo_rx_rdcount">
+      <obj_property name="ElementShortName">s_data_fifo_rx_rdcount[10:0]</obj_property>
+      <obj_property name="ObjectShortName">s_data_fifo_rx_rdcount[10:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_data_fifo_rx_wrcount">
+      <obj_property name="ElementShortName">s_data_fifo_rx_wrcount[10:0]</obj_property>
+      <obj_property name="ObjectShortName">s_data_fifo_rx_wrcount[10:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_data_fifo_rx_almostfull">
+      <obj_property name="ElementShortName">s_data_fifo_rx_almostfull</obj_property>
+      <obj_property name="ObjectShortName">s_data_fifo_rx_almostfull</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_data_fifo_rx_almostempty">
+      <obj_property name="ElementShortName">s_data_fifo_rx_almostempty</obj_property>
+      <obj_property name="ObjectShortName">s_data_fifo_rx_almostempty</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_data_fifo_rx_wrerr">
+      <obj_property name="ElementShortName">s_data_fifo_rx_wrerr</obj_property>
+      <obj_property name="ObjectShortName">s_data_fifo_rx_wrerr</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_data_fifo_rx_rderr">
+      <obj_property name="ElementShortName">s_data_fifo_rx_rderr</obj_property>
+      <obj_property name="ObjectShortName">s_data_fifo_rx_rderr</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_data_fifo_tx_in">
+      <obj_property name="ElementShortName">s_data_fifo_tx_in[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_data_fifo_tx_in[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_data_fifo_tx_out">
+      <obj_property name="ElementShortName">s_data_fifo_tx_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_data_fifo_tx_out[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_data_fifo_tx_re">
+      <obj_property name="ElementShortName">s_data_fifo_tx_re</obj_property>
+      <obj_property name="ObjectShortName">s_data_fifo_tx_re</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_data_fifo_tx_we">
+      <obj_property name="ElementShortName">s_data_fifo_tx_we</obj_property>
+      <obj_property name="ObjectShortName">s_data_fifo_tx_we</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_data_fifo_tx_full">
+      <obj_property name="ElementShortName">s_data_fifo_tx_full</obj_property>
+      <obj_property name="ObjectShortName">s_data_fifo_tx_full</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_data_fifo_tx_empty">
+      <obj_property name="ElementShortName">s_data_fifo_tx_empty</obj_property>
+      <obj_property name="ObjectShortName">s_data_fifo_tx_empty</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_data_fifo_tx_valid">
+      <obj_property name="ElementShortName">s_data_fifo_tx_valid</obj_property>
+      <obj_property name="ObjectShortName">s_data_fifo_tx_valid</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_data_fifo_tx_rdcount">
+      <obj_property name="ElementShortName">s_data_fifo_tx_rdcount[10:0]</obj_property>
+      <obj_property name="ObjectShortName">s_data_fifo_tx_rdcount[10:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_data_fifo_tx_wrcount">
+      <obj_property name="ElementShortName">s_data_fifo_tx_wrcount[10:0]</obj_property>
+      <obj_property name="ObjectShortName">s_data_fifo_tx_wrcount[10:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_data_fifo_tx_almostfull">
+      <obj_property name="ElementShortName">s_data_fifo_tx_almostfull</obj_property>
+      <obj_property name="ObjectShortName">s_data_fifo_tx_almostfull</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_data_fifo_tx_almostempty">
+      <obj_property name="ElementShortName">s_data_fifo_tx_almostempty</obj_property>
+      <obj_property name="ObjectShortName">s_data_fifo_tx_almostempty</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_data_fifo_tx_wrerr">
+      <obj_property name="ElementShortName">s_data_fifo_tx_wrerr</obj_property>
+      <obj_property name="ObjectShortName">s_data_fifo_tx_wrerr</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/s_data_fifo_tx_rderr">
+      <obj_property name="ElementShortName">s_data_fifo_tx_rderr</obj_property>
+      <obj_property name="ObjectShortName">s_data_fifo_tx_rderr</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/v_phase_counter">
+      <obj_property name="ElementShortName">v_phase_counter[31:0]</obj_property>
+      <obj_property name="ObjectShortName">v_phase_counter[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/parm_ext_spi_clk_ratio">
+      <obj_property name="ElementShortName">parm_ext_spi_clk_ratio[31:0]</obj_property>
+      <obj_property name="ObjectShortName">parm_ext_spi_clk_ratio[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/parm_tx_len_bits">
+      <obj_property name="ElementShortName">parm_tx_len_bits[31:0]</obj_property>
+      <obj_property name="ObjectShortName">parm_tx_len_bits[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/parm_wait_cyc_bits">
+      <obj_property name="ElementShortName">parm_wait_cyc_bits[31:0]</obj_property>
+      <obj_property name="ObjectShortName">parm_wait_cyc_bits[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/parm_rx_len_bits">
+      <obj_property name="ElementShortName">parm_rx_len_bits[31:0]</obj_property>
+      <obj_property name="ObjectShortName">parm_rx_len_bits[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/c_timer_stand_value_maximum">
+      <obj_property name="ElementShortName">c_timer_stand_value_maximum[31:0]</obj_property>
+      <obj_property name="ObjectShortName">c_timer_stand_value_maximum[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/c_timer_stand_value_bits">
+      <obj_property name="ElementShortName">c_timer_stand_value_bits[31:0]</obj_property>
+      <obj_property name="ObjectShortName">c_timer_stand_value_bits[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/c_t_stand_wait_ss">
+      <obj_property name="ElementShortName">c_t_stand_wait_ss[12:0]</obj_property>
+      <obj_property name="ObjectShortName">c_t_stand_wait_ss[12:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/c_t_stand_max_tx">
+      <obj_property name="ElementShortName">c_t_stand_max_tx[12:0]</obj_property>
+      <obj_property name="ObjectShortName">c_t_stand_max_tx[12:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/c_t_stand_max_wait">
+      <obj_property name="ElementShortName">c_t_stand_max_wait[12:0]</obj_property>
+      <obj_property name="ObjectShortName">c_t_stand_max_wait[12:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/c_t_stand_max_rx">
+      <obj_property name="ElementShortName">c_t_stand_max_rx[12:0]</obj_property>
+      <obj_property name="ObjectShortName">c_t_stand_max_rx[12:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/c_tmax">
+      <obj_property name="ElementShortName">c_tmax[12:0]</obj_property>
+      <obj_property name="ObjectShortName">c_tmax[12:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/c_t_inc">
+      <obj_property name="ElementShortName">c_t_inc[12:0]</obj_property>
+      <obj_property name="ObjectShortName">c_t_inc[12:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider319" type="divider">
+      <obj_property name="label">Pmod CLS Driver</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_cls_stand_spi_solo/i_ext_spi_clk_x">
+      <obj_property name="ElementShortName">i_ext_spi_clk_x</obj_property>
+      <obj_property name="ObjectShortName">i_ext_spi_clk_x</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_cls_stand_spi_solo/i_srst">
+      <obj_property name="ElementShortName">i_srst</obj_property>
+      <obj_property name="ObjectShortName">i_srst</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_cls_stand_spi_solo/i_spi_ce_4x">
+      <obj_property name="ElementShortName">i_spi_ce_4x</obj_property>
+      <obj_property name="ObjectShortName">i_spi_ce_4x</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_cls_stand_spi_solo/o_command_ready">
+      <obj_property name="ElementShortName">o_command_ready</obj_property>
+      <obj_property name="ObjectShortName">o_command_ready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_cls_stand_spi_solo/i_cmd_wr_clear_display">
+      <obj_property name="ElementShortName">i_cmd_wr_clear_display</obj_property>
+      <obj_property name="ObjectShortName">i_cmd_wr_clear_display</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_cls_stand_spi_solo/i_cmd_wr_text_line1">
+      <obj_property name="ElementShortName">i_cmd_wr_text_line1</obj_property>
+      <obj_property name="ObjectShortName">i_cmd_wr_text_line1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_cls_stand_spi_solo/i_cmd_wr_text_line2">
+      <obj_property name="ElementShortName">i_cmd_wr_text_line2</obj_property>
+      <obj_property name="ObjectShortName">i_cmd_wr_text_line2</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_cls_stand_spi_solo/i_dat_ascii_line1">
+      <obj_property name="ElementShortName">i_dat_ascii_line1[127:0]</obj_property>
+      <obj_property name="ObjectShortName">i_dat_ascii_line1[127:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_cls_stand_spi_solo/i_dat_ascii_line2">
+      <obj_property name="ElementShortName">i_dat_ascii_line2[127:0]</obj_property>
+      <obj_property name="ObjectShortName">i_dat_ascii_line2[127:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_cls_stand_spi_solo/s_t">
+      <obj_property name="ElementShortName">s_t[23:0]</obj_property>
+      <obj_property name="ObjectShortName">s_t[23:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_cls_stand_spi_solo/s_cls_drv_pr_state">
+      <obj_property name="ElementShortName">s_cls_drv_pr_state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">s_cls_drv_pr_state[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_cls_stand_spi_solo/s_cls_drv_nx_state">
+      <obj_property name="ElementShortName">s_cls_drv_nx_state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">s_cls_drv_nx_state[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_cls_stand_spi_solo/s_cls_cmd_len_aux">
+      <obj_property name="ElementShortName">s_cls_cmd_len_aux[3:0]</obj_property>
+      <obj_property name="ObjectShortName">s_cls_cmd_len_aux[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_cls_stand_spi_solo/s_cls_cmd_len_val">
+      <obj_property name="ElementShortName">s_cls_cmd_len_val[3:0]</obj_property>
+      <obj_property name="ObjectShortName">s_cls_cmd_len_val[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_cls_stand_spi_solo/s_cls_dat_len_aux">
+      <obj_property name="ElementShortName">s_cls_dat_len_aux[4:0]</obj_property>
+      <obj_property name="ObjectShortName">s_cls_dat_len_aux[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_cls_stand_spi_solo/s_cls_dat_len_val">
+      <obj_property name="ElementShortName">s_cls_dat_len_val[4:0]</obj_property>
+      <obj_property name="ObjectShortName">s_cls_dat_len_val[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_cls_stand_spi_solo/s_cls_cmd_tx_aux">
+      <obj_property name="ElementShortName">s_cls_cmd_tx_aux[55:0]</obj_property>
+      <obj_property name="ObjectShortName">s_cls_cmd_tx_aux[55:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_cls_stand_spi_solo/s_cls_cmd_tx_val">
+      <obj_property name="ElementShortName">s_cls_cmd_tx_val[55:0]</obj_property>
+      <obj_property name="ObjectShortName">s_cls_cmd_tx_val[55:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_cls_stand_spi_solo/s_cls_cmd_txlen_aux">
+      <obj_property name="ElementShortName">s_cls_cmd_txlen_aux[10:0]</obj_property>
+      <obj_property name="ObjectShortName">s_cls_cmd_txlen_aux[10:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_cls_stand_spi_solo/s_cls_cmd_txlen_val">
+      <obj_property name="ElementShortName">s_cls_cmd_txlen_val[10:0]</obj_property>
+      <obj_property name="ObjectShortName">s_cls_cmd_txlen_val[10:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_cls_stand_spi_solo/s_cls_dat_tx_aux">
+      <obj_property name="ElementShortName">s_cls_dat_tx_aux[127:0]</obj_property>
+      <obj_property name="ObjectShortName">s_cls_dat_tx_aux[127:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_cls_stand_spi_solo/s_cls_dat_tx_val">
+      <obj_property name="ElementShortName">s_cls_dat_tx_val[127:0]</obj_property>
+      <obj_property name="ObjectShortName">s_cls_dat_tx_val[127:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_cls_stand_spi_solo/s_cls_dat_txlen_aux">
+      <obj_property name="ElementShortName">s_cls_dat_txlen_aux[10:0]</obj_property>
+      <obj_property name="ObjectShortName">s_cls_dat_txlen_aux[10:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_cls_stand_spi_solo/s_cls_dat_txlen_val">
+      <obj_property name="ElementShortName">s_cls_dat_txlen_val[10:0]</obj_property>
+      <obj_property name="ObjectShortName">s_cls_dat_txlen_val[10:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_cls_stand_spi_solo/parm_fast_simulation">
+      <obj_property name="ElementShortName">parm_fast_simulation[31:0]</obj_property>
+      <obj_property name="ObjectShortName">parm_fast_simulation[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_cls_stand_spi_solo/parm_FCLK">
+      <obj_property name="ElementShortName">parm_FCLK[31:0]</obj_property>
+      <obj_property name="ObjectShortName">parm_FCLK[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_cls_stand_spi_solo/parm_FCLK_ce">
+      <obj_property name="ElementShortName">parm_FCLK_ce[31:0]</obj_property>
+      <obj_property name="ObjectShortName">parm_FCLK_ce[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_cls_stand_spi_solo/c_cls_drv_time_value_bits">
+      <obj_property name="ElementShortName">c_cls_drv_time_value_bits[31:0]</obj_property>
+      <obj_property name="ObjectShortName">c_cls_drv_time_value_bits[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_cls_stand_spi_solo/c_t_pmodcls_boot">
+      <obj_property name="ElementShortName">c_t_pmodcls_boot[23:0]</obj_property>
+      <obj_property name="ObjectShortName">c_t_pmodcls_boot[23:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_cls_stand_spi_solo/c_tmax">
+      <obj_property name="ElementShortName">c_tmax[23:0]</obj_property>
+      <obj_property name="ObjectShortName">c_tmax[23:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_s725_tb/u_fpga_serial_mem_tester_s725/u_pmod_cls_custom_driver/u_pmod_cls_stand_spi_solo/c_cls_drv_state_bits">
+      <obj_property name="ElementShortName">c_cls_drv_state_bits[31:0]</obj_property>
+      <obj_property name="ObjectShortName">c_cls_drv_state_bits[31:0]</obj_property>
+   </wvobject>
+</wave_config>
