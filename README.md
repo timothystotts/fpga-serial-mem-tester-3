@@ -34,7 +34,8 @@ Two peripherals are used: Digilent Inc. Pmod SF3, Digilent Inc. Pmod CLS.
 The design is broken into four groupings.
 The first group targets the Digilent Inc. Arty A7-100 development board.
 The second group targets the Digilent Inc. Arty S7-25 development board.
-The third group targets either the Digilent Inc. Arty A7-100 development board or
+The third and fourth groups target either the
+Digilent Inc. Arty A7-100 development board or
 the Digilent Inc. Arty S7-25 development board.
 The last group targets the Digilent Inc. Zybo Z7-20 development board.
 The projects are likely portable to the smaller Arty A7-35 and Zybo Z7-10
@@ -52,6 +53,17 @@ The folder SF-Tester-Design-MB-S7 contains a Xilinx Vivado IP Integrator plus
 Xilinx Vitis design. The design is essentially the same as the SF-Tester-Design-MB-A7 mentioned
 above, but instead targets the Arty S7-25 development board, including the differences in available
 board components, such as count of RGB LEDs.
+
+The folder SF-Tester-Design-SV contains a Xilinx Vivado project with sources
+containing SystemVerilog 2012 RTL modules and VHDL visual test-bench.
+Plain HDL without a soft CPU or C code is authored to
+talk with board components, a N25Q SPI Flash 256Mbit, and a 16x2 character LCD peripheral. The
+design is essentially equivalent function as the
+SF-Tester-Design-MB-A7/SF-Tester-Design-MB-S7
+projects, but executes much faster as the control loop FSM is implemented in hardware
+instead of a low-speed CPU. This design targets either of the Arty A7-100 or the Arty S7-25
+development boards, and adjusts for the difference in available board components, such as
+count of RGB LEDs.
 
 The folder SF-Tester-Design-VHDL contains a Xilinx Vivado project with sources
 containing only VHDL-2002 and VHDL-2008 modules. Plain HDL without a soft CPU or C code is authored to
@@ -84,9 +96,9 @@ cannot change the terminology in use by the tools.
 
 ### Project information document:
 
-./Serial Flash Sector Tester.pdf
+./Serial Flash Sector Tester - Refreshed.pdf
 
-[Serial Flash Sector Tester info](https://github.com/timothystotts/fpga-serial-mem-tester-3/blob/main/Serial%20Flash%20Sector%20Tester.pdf)
+[Serial Flash Sector Tester info](https://github.com/timothystotts/fpga-serial-mem-tester-3/blob/main/Serial%20Flash%20Sector%20Tester%20-%20Refreshed.pdf)
 
 ### Diagrams design document:
 
