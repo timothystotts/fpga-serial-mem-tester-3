@@ -81,7 +81,7 @@ a 16x2 character LCD display, and a N25Q serial flash.
 Its functionality is mostly equivalent function to that of the SF-Tester-Design-MB-A7 design,
 but differs in the count of RGB LEDs.
 
-### VHDL naming conventions notice
+### HDL naming conventions notice
 The Pmod peripherals used in this project connect via a standard bus technology design called SPI.
 The use of MOSI/MISO terminology is considered obsolete. COPI/CIPO is now used. The MOSI signal on a
 controller can be replaced with the title 'COPI'. Master and Slave terms are now Controller and Peripheral.
@@ -100,7 +100,7 @@ cannot change the terminology in use by the tools.
 
 [Serial Flash Sector Tester info](https://github.com/timothystotts/fpga-serial-mem-tester-3/blob/main/Serial%20Flash%20Sector%20Tester%20-%20Refreshed.pdf)
 
-### Diagrams design document:
+### Diagrams design document (only the HDL designs):
 
 ./SF-Tester-Design-Documents/SF-Tester-Design-Diagrams.pdf
 
