@@ -27,10 +27,7 @@
 #
 # 3. The following remote source files that were added to the original project:-
 #
-#    "/home/timothystotts/<dir>/wa/timothystotts/fpga-serial-mem-tester-3/SF-Tester-Design-MB-A7/IPI-BDs/system_mb_a7/system_mb_a7.bd"
-#    "/home/timothystotts/<dir>/wa/timothystotts/fpga-serial-mem-tester-3/SF-Tester-Design-MB-A7/IPI-BDs/system_mb_a7/hdl/system_mb_a7_wrapper.v"
-#    "/home/timothystotts/<dir>/wa/timothystotts/fpga-serial-mem-tester-3/SF-Tester-Design-MB-A7/IPI-BDs/system_mb_a7/ip/system_mb_a7_mig_7series_0_0_2/board.prj"
-#    "/home/timothystotts/<dir>/wa/timothystotts/fpga-serial-mem-tester-3/SF-Tester-Design-MB-A7/IPI-BDs/system_mb_a7/ip/system_mb_a7_mig_7series_0_0/board.prj"
+#    "/home/timothystotts/<dir>/wa/timothystotts/fpga-serial-mem-tester-3/SF-Tester-Design-MB-A7/IPI-BDs/system_mb_a7/ip/ssystem_mb_a7_mig_7series_0_0_2/board.prj"
 #    "/home/timothystotts/<dir>/wa/timothystotts/fpga-serial-mem-tester-3/SF-Tester-Design-MB-A7/Constraints/Arty-A7-100-Master.xdc"
 #
 #*****************************************************************************************
@@ -39,10 +36,7 @@
 proc checkRequiredFiles { origin_dir} {
   set status true
   set files [list \
- "[file normalize "$origin_dir/../IPI-BDs/system_mb_a7/system_mb_a7.bd"]"\
- "[file normalize "$origin_dir/../IPI-BDs/system_mb_a7/hdl/system_mb_a7_wrapper.v"]"\
- "[file normalize "$origin_dir/../IPI-BDs/system_mb_a7/ip/system_mb_a7_mig_7series_0_0_2/board.prj"]"\
- "[file normalize "$origin_dir/../IPI-BDs/system_mb_a7/ip/system_mb_a7_mig_7series_0_0/board.prj"]"\
+ "[file normalize "$origin_dir/../IPI-BDs/system_mb_a7/ip/ssystem_mb_a7_mig_7series_0_0_2/board.prj"]"\
  "[file normalize "$origin_dir/../Constraints/Arty-A7-100-Master.xdc"]"\
   ]
   foreach ifile $files {
@@ -190,37 +184,16 @@ if { $obj != {} } {
 # Set 'sources_1' fileset object
 set obj [get_filesets sources_1]
 set files [list \
- [file normalize "${origin_dir}/../IPI-BDs/system_mb_a7/system_mb_a7.bd"] \
- [file normalize "${origin_dir}/../IPI-BDs/system_mb_a7/hdl/system_mb_a7_wrapper.v"] \
  [file normalize "${origin_dir}/../IPI-BDs/system_mb_a7/ip/system_mb_a7_mig_7series_0_0_2/board.prj"] \
- [file normalize "${origin_dir}/../IPI-BDs/system_mb_a7/ip/system_mb_a7_mig_7series_0_0/board.prj"] \
 ]
 add_files -norecurse -fileset $obj $files
 
 # Set 'sources_1' fileset file properties for remote files
-set file "$origin_dir/../IPI-BDs/system_mb_a7/system_mb_a7.bd"
-set file [file normalize $file]
-set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
-set_property -name "registered_with_manager" -value "1" -objects $file_obj
-
-set file "$origin_dir/../IPI-BDs/system_mb_a7/ip/system_mb_a7_mig_7series_0_0_2/board.prj"
-set file [file normalize $file]
-set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
-set_property -name "scoped_to_cells" -value "system_mb_a7_mig_7series_0_0" -objects $file_obj
-
-set file "$origin_dir/../IPI-BDs/system_mb_a7/ip/system_mb_a7_mig_7series_0_0/board.prj"
-set file [file normalize $file]
-set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
-set_property -name "scoped_to_cells" -value "system_mb_a7_mig_7series_0_0" -objects $file_obj
-
 
 # Set 'sources_1' fileset file properties for local files
 # None
 
 # Set 'sources_1' fileset properties
-set obj [get_filesets sources_1]
-set_property -name "dataflow_viewer_settings" -value "min_width=16" -objects $obj
-set_property -name "top" -value "system_mb_a7_wrapper" -objects $obj
 
 # Create 'constrs_1' fileset (if not found)
 if {[string equal [get_filesets -quiet constrs_1] ""]} {
@@ -251,9 +224,6 @@ set obj [get_filesets sim_1]
 # Empty (no sources present)
 
 # Set 'sim_1' fileset properties
-set obj [get_filesets sim_1]
-set_property -name "top" -value "system_mb_a7_wrapper" -objects $obj
-set_property -name "top_lib" -value "xil_defaultlib" -objects $obj
 
 # Set 'utils_1' fileset object
 set obj [get_filesets utils_1]
