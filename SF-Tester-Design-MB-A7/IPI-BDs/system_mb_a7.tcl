@@ -20,7 +20,7 @@ set script_folder [_tcl::get_script_folder]
 ################################################################
 # Check if script is running in correct Vivado version.
 ################################################################
-set scripts_vivado_version 2021.2
+set scripts_vivado_version 2022.2
 set current_vivado_version [version -short]
 
 if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
@@ -216,28 +216,27 @@ proc create_hier_cell_microblaze_0_local_memory { parentCell nameHier } {
 
   # Create instance: dlmb_bram_if_cntlr, and set properties
   set dlmb_bram_if_cntlr [ create_bd_cell -type ip -vlnv xilinx.com:ip:lmb_bram_if_cntlr:4.0 dlmb_bram_if_cntlr ]
-  set_property -dict [ list \
-   CONFIG.C_ECC {0} \
- ] $dlmb_bram_if_cntlr
+  set_property CONFIG.C_ECC {0} $dlmb_bram_if_cntlr
+
 
   # Create instance: dlmb_v10, and set properties
   set dlmb_v10 [ create_bd_cell -type ip -vlnv xilinx.com:ip:lmb_v10:3.0 dlmb_v10 ]
 
   # Create instance: ilmb_bram_if_cntlr, and set properties
   set ilmb_bram_if_cntlr [ create_bd_cell -type ip -vlnv xilinx.com:ip:lmb_bram_if_cntlr:4.0 ilmb_bram_if_cntlr ]
-  set_property -dict [ list \
-   CONFIG.C_ECC {0} \
- ] $ilmb_bram_if_cntlr
+  set_property CONFIG.C_ECC {0} $ilmb_bram_if_cntlr
+
 
   # Create instance: ilmb_v10, and set properties
   set ilmb_v10 [ create_bd_cell -type ip -vlnv xilinx.com:ip:lmb_v10:3.0 ilmb_v10 ]
 
   # Create instance: lmb_bram, and set properties
   set lmb_bram [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 lmb_bram ]
-  set_property -dict [ list \
-   CONFIG.Memory_Type {True_Dual_Port_RAM} \
-   CONFIG.use_bram_block {BRAM_Controller} \
- ] $lmb_bram
+  set_property -dict [list \
+    CONFIG.Memory_Type {True_Dual_Port_RAM} \
+    CONFIG.use_bram_block {BRAM_Controller} \
+  ] $lmb_bram
+
 
   # Create interface connections
   connect_bd_intf_net -intf_net microblaze_0_dlmb [get_bd_intf_pins DLMB] [get_bd_intf_pins dlmb_v10/LMB_M]
@@ -323,15 +322,13 @@ proc create_root_design { parentCell } {
 
   # Create instance: PWM_0, and set properties
   set PWM_0 [ create_bd_cell -type ip -vlnv digilentinc.com:IP:PWM:2.0 PWM_0 ]
-  set_property -dict [ list \
-   CONFIG.NUM_PWM {12} \
- ] $PWM_0
+  set_property CONFIG.NUM_PWM {12} $PWM_0
+
 
   # Create instance: PWM_1, and set properties
   set PWM_1 [ create_bd_cell -type ip -vlnv digilentinc.com:IP:PWM:2.0 PWM_1 ]
-  set_property -dict [ list \
-   CONFIG.NUM_PWM {4} \
- ] $PWM_1
+  set_property CONFIG.NUM_PWM {4} $PWM_1
+
 
   # Create instance: PmodCLS_0, and set properties
   set PmodCLS_0 [ create_bd_cell -type ip -vlnv digilentinc.com:IP:PmodCLS:1.0 PmodCLS_0 ]
@@ -341,139 +338,142 @@ proc create_root_design { parentCell } {
 
   # Create instance: axi_ethernetlite_0, and set properties
   set axi_ethernetlite_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_ethernetlite:3.0 axi_ethernetlite_0 ]
-  set_property -dict [ list \
-   CONFIG.MDIO_BOARD_INTERFACE {eth_mdio_mdc} \
-   CONFIG.MII_BOARD_INTERFACE {eth_mii} \
-   CONFIG.USE_BOARD_FLOW {true} \
- ] $axi_ethernetlite_0
+  set_property -dict [list \
+    CONFIG.MDIO_BOARD_INTERFACE {eth_mdio_mdc} \
+    CONFIG.MII_BOARD_INTERFACE {eth_mii} \
+    CONFIG.USE_BOARD_FLOW {true} \
+  ] $axi_ethernetlite_0
+
 
   # Create instance: axi_gpio_0, and set properties
   set axi_gpio_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0 ]
-  set_property -dict [ list \
-   CONFIG.C_INTERRUPT_PRESENT {1} \
-   CONFIG.GPIO2_BOARD_INTERFACE {push_buttons_4bits} \
-   CONFIG.GPIO_BOARD_INTERFACE {dip_switches_4bits} \
-   CONFIG.USE_BOARD_FLOW {true} \
- ] $axi_gpio_0
+  set_property -dict [list \
+    CONFIG.C_INTERRUPT_PRESENT {1} \
+    CONFIG.GPIO2_BOARD_INTERFACE {push_buttons_4bits} \
+    CONFIG.GPIO_BOARD_INTERFACE {dip_switches_4bits} \
+    CONFIG.USE_BOARD_FLOW {true} \
+  ] $axi_gpio_0
+
 
   # Create instance: axi_quad_spi_0, and set properties
   set axi_quad_spi_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_quad_spi:3.2 axi_quad_spi_0 ]
-  set_property -dict [ list \
-   CONFIG.QSPI_BOARD_INTERFACE {qspi_flash} \
-   CONFIG.USE_BOARD_FLOW {true} \
- ] $axi_quad_spi_0
+  set_property -dict [list \
+    CONFIG.C_SPI_MEMORY {2} \
+    CONFIG.C_SPI_MODE {2} \
+    CONFIG.QSPI_BOARD_INTERFACE {qspi_flash} \
+    CONFIG.USE_BOARD_FLOW {true} \
+  ] $axi_quad_spi_0
+
 
   # Create instance: axi_smc, and set properties
   set axi_smc [ create_bd_cell -type ip -vlnv xilinx.com:ip:smartconnect:1.0 axi_smc ]
-  set_property -dict [ list \
-   CONFIG.NUM_SI {2} \
- ] $axi_smc
+  set_property CONFIG.NUM_SI {2} $axi_smc
+
 
   # Create instance: axi_timer_0, and set properties
   set axi_timer_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_timer:2.0 axi_timer_0 ]
 
   # Create instance: axi_uartlite_0, and set properties
   set axi_uartlite_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_uartlite:2.0 axi_uartlite_0 ]
-  set_property -dict [ list \
-   CONFIG.C_BAUDRATE {115200} \
-   CONFIG.UARTLITE_BOARD_INTERFACE {usb_uart} \
-   CONFIG.USE_BOARD_FLOW {true} \
- ] $axi_uartlite_0
+  set_property -dict [list \
+    CONFIG.C_BAUDRATE {115200} \
+    CONFIG.C_S_AXI_ACLK_FREQ_HZ {83333333} \
+    CONFIG.UARTLITE_BOARD_INTERFACE {usb_uart} \
+    CONFIG.USE_BOARD_FLOW {true} \
+  ] $axi_uartlite_0
+
 
   # Create instance: clk_wiz_0, and set properties
   set clk_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0 ]
-  set_property -dict [ list \
-   CONFIG.CLKOUT1_JITTER {118.758} \
-   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {166.667} \
-   CONFIG.CLKOUT2_JITTER {114.829} \
-   CONFIG.CLKOUT2_PHASE_ERROR {98.575} \
-   CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {200.000} \
-   CONFIG.CLKOUT2_USED {true} \
-   CONFIG.CLKOUT3_JITTER {175.402} \
-   CONFIG.CLKOUT3_PHASE_ERROR {98.575} \
-   CONFIG.CLKOUT3_REQUESTED_OUT_FREQ {25.000} \
-   CONFIG.CLKOUT3_USED {true} \
-   CONFIG.CLKOUT4_JITTER {151.636} \
-   CONFIG.CLKOUT4_PHASE_ERROR {98.575} \
-   CONFIG.CLKOUT4_REQUESTED_OUT_FREQ {50.000} \
-   CONFIG.CLKOUT4_USED {true} \
-   CONFIG.CLK_IN1_BOARD_INTERFACE {sys_clock} \
-   CONFIG.MMCM_CLKOUT0_DIVIDE_F {6.000} \
-   CONFIG.MMCM_CLKOUT1_DIVIDE {5} \
-   CONFIG.MMCM_CLKOUT2_DIVIDE {40} \
-   CONFIG.MMCM_CLKOUT3_DIVIDE {20} \
-   CONFIG.NUM_OUT_CLKS {4} \
-   CONFIG.RESET_BOARD_INTERFACE {reset} \
-   CONFIG.RESET_PORT {resetn} \
-   CONFIG.RESET_TYPE {ACTIVE_LOW} \
-   CONFIG.USE_BOARD_FLOW {true} \
- ] $clk_wiz_0
+  set_property -dict [list \
+    CONFIG.CLKOUT1_JITTER {118.758} \
+    CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {166.667} \
+    CONFIG.CLKOUT2_JITTER {114.829} \
+    CONFIG.CLKOUT2_PHASE_ERROR {98.575} \
+    CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {200.000} \
+    CONFIG.CLKOUT2_USED {true} \
+    CONFIG.CLKOUT3_JITTER {175.402} \
+    CONFIG.CLKOUT3_PHASE_ERROR {98.575} \
+    CONFIG.CLKOUT3_REQUESTED_OUT_FREQ {25.000} \
+    CONFIG.CLKOUT3_USED {true} \
+    CONFIG.CLKOUT4_JITTER {151.636} \
+    CONFIG.CLKOUT4_PHASE_ERROR {98.575} \
+    CONFIG.CLKOUT4_REQUESTED_OUT_FREQ {50.000} \
+    CONFIG.CLKOUT4_USED {true} \
+    CONFIG.CLK_IN1_BOARD_INTERFACE {sys_clock} \
+    CONFIG.MMCM_CLKOUT0_DIVIDE_F {6.000} \
+    CONFIG.MMCM_CLKOUT1_DIVIDE {5} \
+    CONFIG.MMCM_CLKOUT2_DIVIDE {40} \
+    CONFIG.MMCM_CLKOUT3_DIVIDE {20} \
+    CONFIG.NUM_OUT_CLKS {4} \
+    CONFIG.RESET_BOARD_INTERFACE {reset} \
+    CONFIG.RESET_PORT {resetn} \
+    CONFIG.RESET_TYPE {ACTIVE_LOW} \
+    CONFIG.USE_BOARD_FLOW {true} \
+  ] $clk_wiz_0
+
 
   # Create instance: mdm_1, and set properties
   set mdm_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:mdm:3.2 mdm_1 ]
 
   # Create instance: microblaze_0, and set properties
   set microblaze_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:microblaze:11.0 microblaze_0 ]
-  set_property -dict [ list \
-   CONFIG.C_ADDR_TAG_BITS {13} \
-   CONFIG.C_CACHE_BYTE_SIZE {32768} \
-   CONFIG.C_DCACHE_ADDR_TAG {13} \
-   CONFIG.C_DCACHE_BYTE_SIZE {32768} \
-   CONFIG.C_DCACHE_USE_WRITEBACK {1} \
-   CONFIG.C_DEBUG_ENABLED {1} \
-   CONFIG.C_DIV_ZERO_EXCEPTION {1} \
-   CONFIG.C_D_AXI {1} \
-   CONFIG.C_D_LMB {1} \
-   CONFIG.C_ILL_OPCODE_EXCEPTION {1} \
-   CONFIG.C_I_AXI {0} \
-   CONFIG.C_I_LMB {1} \
-   CONFIG.C_MMU_DTLB_SIZE {2} \
-   CONFIG.C_MMU_ITLB_SIZE {1} \
-   CONFIG.C_MMU_ZONES {2} \
-   CONFIG.C_M_AXI_D_BUS_EXCEPTION {1} \
-   CONFIG.C_M_AXI_I_BUS_EXCEPTION {1} \
-   CONFIG.C_NUMBER_OF_PC_BRK {2} \
-   CONFIG.C_OPCODE_0x0_ILLEGAL {1} \
-   CONFIG.C_UNALIGNED_EXCEPTIONS {1} \
-   CONFIG.C_USE_BARREL {1} \
-   CONFIG.C_USE_DCACHE {1} \
-   CONFIG.C_USE_DIV {1} \
-   CONFIG.C_USE_HW_MUL {1} \
-   CONFIG.C_USE_ICACHE {1} \
-   CONFIG.C_USE_MSR_INSTR {1} \
-   CONFIG.C_USE_PCMP_INSTR {1} \
-   CONFIG.C_USE_STACK_PROTECTION {1} \
-   CONFIG.G_TEMPLATE_LIST {9} \
-   CONFIG.G_USE_EXCEPTIONS {1} \
- ] $microblaze_0
+  set_property -dict [list \
+    CONFIG.C_ADDR_TAG_BITS {13} \
+    CONFIG.C_CACHE_BYTE_SIZE {32768} \
+    CONFIG.C_DCACHE_ADDR_TAG {13} \
+    CONFIG.C_DCACHE_BYTE_SIZE {32768} \
+    CONFIG.C_DCACHE_USE_WRITEBACK {1} \
+    CONFIG.C_DEBUG_ENABLED {1} \
+    CONFIG.C_DIV_ZERO_EXCEPTION {1} \
+    CONFIG.C_D_AXI {1} \
+    CONFIG.C_D_LMB {1} \
+    CONFIG.C_ILL_OPCODE_EXCEPTION {1} \
+    CONFIG.C_I_AXI {0} \
+    CONFIG.C_I_LMB {1} \
+    CONFIG.C_M_AXI_D_BUS_EXCEPTION {1} \
+    CONFIG.C_M_AXI_I_BUS_EXCEPTION {1} \
+    CONFIG.C_NUMBER_OF_PC_BRK {2} \
+    CONFIG.C_OPCODE_0x0_ILLEGAL {1} \
+    CONFIG.C_UNALIGNED_EXCEPTIONS {1} \
+    CONFIG.C_USE_BARREL {1} \
+    CONFIG.C_USE_DCACHE {1} \
+    CONFIG.C_USE_DIV {1} \
+    CONFIG.C_USE_HW_MUL {1} \
+    CONFIG.C_USE_ICACHE {1} \
+    CONFIG.C_USE_MSR_INSTR {1} \
+    CONFIG.C_USE_PCMP_INSTR {1} \
+    CONFIG.C_USE_STACK_PROTECTION {1} \
+    CONFIG.G_TEMPLATE_LIST {9} \
+    CONFIG.G_USE_EXCEPTIONS {1} \
+  ] $microblaze_0
+
 
   # Create instance: microblaze_0_axi_intc, and set properties
   set microblaze_0_axi_intc [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_intc:4.1 microblaze_0_axi_intc ]
-  set_property -dict [ list \
-   CONFIG.C_HAS_FAST {1} \
- ] $microblaze_0_axi_intc
+  set_property CONFIG.C_HAS_FAST {1} $microblaze_0_axi_intc
+
 
   # Create instance: microblaze_0_axi_periph, and set properties
   set microblaze_0_axi_periph [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 microblaze_0_axi_periph ]
-  set_property -dict [ list \
-   CONFIG.NUM_MI {10} \
- ] $microblaze_0_axi_periph
+  set_property CONFIG.NUM_MI {10} $microblaze_0_axi_periph
+
 
   # Create instance: microblaze_0_local_memory
   create_hier_cell_microblaze_0_local_memory [current_bd_instance .] microblaze_0_local_memory
 
   # Create instance: microblaze_0_xlconcat, and set properties
   set microblaze_0_xlconcat [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 microblaze_0_xlconcat ]
-  set_property -dict [ list \
-   CONFIG.NUM_PORTS {6} \
- ] $microblaze_0_xlconcat
+  set_property CONFIG.NUM_PORTS {6} $microblaze_0_xlconcat
+
 
   # Create instance: mig_7series_0, and set properties
   set mig_7series_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:mig_7series:4.2 mig_7series_0 ]
-  set_property -dict [ list \
-   CONFIG.BOARD_MIG_PARAM {ddr3_sdram} \
-   CONFIG.RESET_BOARD_INTERFACE {reset} \
- ] $mig_7series_0
+  set_property -dict [list \
+    CONFIG.BOARD_MIG_PARAM {ddr3_sdram} \
+    CONFIG.RESET_BOARD_INTERFACE {reset} \
+  ] $mig_7series_0
+
 
   # Create instance: rst_mig_7series_0_83M, and set properties
   set rst_mig_7series_0_83M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_mig_7series_0_83M ]
@@ -542,9 +542,9 @@ proc create_root_design { parentCell } {
   assign_bd_address -offset 0x41C00000 -range 0x00010000 -target_address_space [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs axi_timer_0/S_AXI/Reg] -force
   assign_bd_address -offset 0x40600000 -range 0x00010000 -target_address_space [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs axi_uartlite_0/S_AXI/Reg] -force
   assign_bd_address -offset 0x00000000 -range 0x00008000 -target_address_space [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs microblaze_0_local_memory/dlmb_bram_if_cntlr/SLMB/Mem] -force
-  assign_bd_address -offset 0x00000000 -range 0x00008000 -target_address_space [get_bd_addr_spaces microblaze_0/Instruction] [get_bd_addr_segs microblaze_0_local_memory/ilmb_bram_if_cntlr/SLMB/Mem] -force
   assign_bd_address -offset 0x41200000 -range 0x00010000 -target_address_space [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs microblaze_0_axi_intc/S_AXI/Reg] -force
   assign_bd_address -offset 0x80000000 -range 0x10000000 -target_address_space [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs mig_7series_0/memmap/memaddr] -force
+  assign_bd_address -offset 0x00000000 -range 0x00008000 -target_address_space [get_bd_addr_spaces microblaze_0/Instruction] [get_bd_addr_segs microblaze_0_local_memory/ilmb_bram_if_cntlr/SLMB/Mem] -force
   assign_bd_address -offset 0x80000000 -range 0x10000000 -target_address_space [get_bd_addr_spaces microblaze_0/Instruction] [get_bd_addr_segs mig_7series_0/memmap/memaddr] -force
 
 

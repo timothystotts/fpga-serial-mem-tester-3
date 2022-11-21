@@ -5,7 +5,7 @@
 [submodule "SF-Tester-Design-MB-A7/IP/vivado-library"]
 	path = SF-Tester-Design-MB-A7/IP/vivado-library
 	url = https://github.com/timothystotts/vivado-library.git
-	branch = arty-a7-100-vivado-2021.2
+	branch = arty-a7-100-vivado-2022.2
 [submodule "SF-Tester-Design-MB-S7/IP/vivado-library"]
 	path = SF-Tester-Design-MB-S7/IP/vivado-library
 	url = https://github.com/timothystotts/vivado-library.git
