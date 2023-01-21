@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------------------
 -- MIT License
 --
--- Copyright (c) 2020-2021 Timothy Stotts
+-- Copyright (c) 2020-2022 Timothy Stotts
 --
 -- Permission is hereby granted, free of charge, to any person obtaining a copy
 -- of this software and associated documentation files (the "Software"), to deal
@@ -37,14 +37,14 @@
 `begin_keywords "1800-2012"
 //Part 1: Module header:--------------------------------------------------------
 module clock_divider
-	#(parameter
-		integer par_clk_divisor = 1000
-		)
-	(
-		output logic o_clk_div,
-		output logic o_rst_div,
-		input logic i_clk_mhz,
-		input logic i_rst_mhz);
+    #(parameter
+        integer par_clk_divisor = 1000
+        )
+    (
+        output logic o_clk_div,
+        output logic o_rst_div,
+        input logic i_clk_mhz,
+        input logic i_rst_mhz);
 
 // Part 2: Declarations---------------------------------------------------------
 timeunit 1ns;
@@ -73,19 +73,19 @@ logic s_rst_out;
 // clock waveform.
 always_ff @(posedge i_clk_mhz)
 begin: p_clk_div_cnt
-	if (i_rst_mhz) begin
-		s_clk_div_cnt <= 0;
-		s_clk_div_ce <= 1'b1;
-	end else
-		if (s_clk_div_cnt == c_clk_max) begin : if_counter_max_reset
-			s_clk_div_cnt <= 0;
-			s_clk_div_ce <= 1'b1;
-		end : if_counter_max_reset
+    if (i_rst_mhz) begin
+        s_clk_div_cnt <= 0;
+        s_clk_div_ce <= 1'b1;
+    end else
+        if (s_clk_div_cnt == c_clk_max) begin : if_counter_max_reset
+            s_clk_div_cnt <= 0;
+            s_clk_div_ce <= 1'b1;
+        end : if_counter_max_reset
 
-		else begin : if_counter_lt_max_inc
-			s_clk_div_cnt <= s_clk_div_cnt + 1;
-			s_clk_div_ce <= 1'b0;
-		end : if_counter_lt_max_inc
+        else begin : if_counter_lt_max_inc
+            s_clk_div_cnt <= s_clk_div_cnt + 1;
+            s_clk_div_ce <= 1'b0;
+        end : if_counter_lt_max_inc
 end : p_clk_div_cnt
 
 // While the upstream clock is executing with reset held, this process will
@@ -95,14 +95,14 @@ end : p_clk_div_cnt
 // downstream clock, the reset will change from active one to inactive low.
 always_ff @(posedge i_clk_mhz)
 begin: p_clk_div_out
-	if (i_rst_mhz) begin
-		s_rst_out <= 1'b1;
-		s_clk_out <= 1'b0;
-	end else
-		if (s_clk_div_ce) begin
-			s_rst_out <= s_rst_out && (! s_clk_out);
-			s_clk_out <= (! s_clk_out);
-		end
+    if (i_rst_mhz) begin
+        s_rst_out <= 1'b1;
+        s_clk_out <= 1'b0;
+    end else
+        if (s_clk_div_ce) begin
+            s_rst_out <= s_rst_out && (~ s_clk_out);
+            s_clk_out <= ~ s_clk_out;
+        end
 end : p_clk_div_out
 
 assign o_clk_div = s_clk_out;

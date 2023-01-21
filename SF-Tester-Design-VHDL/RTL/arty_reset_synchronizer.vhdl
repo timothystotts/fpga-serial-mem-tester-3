@@ -38,29 +38,29 @@ use ieee.numeric_std.all;
 library work;
 --------------------------------------------------------------------------------
 entity arty_reset_synchronizer is
-	port(
-		i_clk_mhz     : in  std_logic;
-		i_rstn_global : in  std_logic;
-		o_rst_mhz     : out std_logic
-	);
+    port(
+        i_clk_mhz     : in  std_logic;
+        i_rstn_global : in  std_logic;
+        o_rst_mhz     : out std_logic
+    );
 end entity arty_reset_synchronizer;
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
 architecture rtl of arty_reset_synchronizer is
-	constant c_RESET_STAGES : natural := 14;
+    constant c_RESET_STAGES : natural := 14;
 
-	signal s_rst_shift : std_logic_vector((c_RESET_STAGES - 1) downto 0);
+    signal s_rst_shift : std_logic_vector((c_RESET_STAGES - 1) downto 0);
 begin
-	p_sync_reset_shift : process(i_clk_mhz, i_rstn_global)
-	begin
-		if (i_rstn_global = '0') then
-			s_rst_shift <= (others => '1');
-		elsif rising_edge(i_clk_mhz) then
-			s_rst_shift <= s_rst_shift((c_RESET_STAGES - 2) downto 0) & '0';
-		end if;
-	end process p_sync_reset_shift;
+    p_sync_reset_shift : process(i_clk_mhz, i_rstn_global)
+    begin
+        if (i_rstn_global = '0') then
+            s_rst_shift <= (others => '1');
+        elsif rising_edge(i_clk_mhz) then
+            s_rst_shift <= s_rst_shift((c_RESET_STAGES - 2) downto 0) & '0';
+        end if;
+    end process p_sync_reset_shift;
 
-	o_rst_mhz <= s_rst_shift(c_RESET_STAGES - 1);
+    o_rst_mhz <= s_rst_shift(c_RESET_STAGES - 1);
 end architecture rtl;
 --------------------------------------------------------------------------------

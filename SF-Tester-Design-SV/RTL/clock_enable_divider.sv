@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------------------
 -- MIT License
 --
--- Copyright (c) 2020-2021 Timothy Stotts
+-- Copyright (c) 2020-2022 Timothy Stotts
 --
 -- Permission is hereby granted, free of charge, to any person obtaining a copy
 -- of this software and associated documentation files (the "Software"), to deal
@@ -24,22 +24,22 @@
 /**-----------------------------------------------------------------------------
 -- \file clock_enable_divider.sv
 --
--- \brief A clock enable divider for an integer division of the source
--- clock enable. The clock and synchronous reset are kept the same; but the
+-- \brief A clock enable divider for an integer division of the source clock
+-- enable. The clock and synchronous reset are kept the same; but the
 -- clock enable is further divided.
 ------------------------------------------------------------------------------*/
 `begin_keywords "1800-2012"
 //------------------------------------------------------------------------------
 //Part 1: Module header:--------------------------------------------------------
 module clock_enable_divider
-	#(parameter
-		integer par_ce_divisor = 1000
-		)
-	(
-		output logic o_ce_div,
-		input logic i_clk_mhz, 
-		input logic i_rst_mhz,
-		input logic i_ce_mhz);
+    #(parameter
+        integer par_ce_divisor = 1000
+        )
+    (
+        output logic o_ce_div,
+        input logic i_clk_mhz, 
+        input logic i_rst_mhz,
+        input logic i_ce_mhz);
 
 // Part 2: Declarations---------------------------------------------------------
 timeunit 1ns;
@@ -56,34 +56,34 @@ localparam integer c_clk_max = par_ce_divisor - 1;
 integer s_clk_div_cnt;
 
 // A clock enable at the source clock frequency which issues the periodic
-// toggle of the divided clock. 
+// toggle of the divided clock.
 logic s_clk_div_ce;
 
 //Part 3: Statements------------------------------------------------------------
 // The even clock frequency division is operated by a clock enable signal to
 // indicate the upstream clock cycle for changing the edge of the downstream
-// clock enable waveform. 
+// clock enable waveform.
 always_ff @(posedge i_clk_mhz)
 begin: p_clk_div_cnt
-	if (i_rst_mhz) begin
-		s_clk_div_cnt <= 0;
-		s_clk_div_ce <= 1'b1;
-	end else
-		if (i_ce_mhz)
-			if (s_clk_div_cnt == c_clk_max) begin : if_counter_max_reset
-				s_clk_div_cnt <= 0;
-				s_clk_div_ce <= 1'b1;
-			end :  if_counter_max_reset
-			
-			else begin : if_counter_lt_max_inc
-				s_clk_div_cnt <= s_clk_div_cnt + 1;
-				s_clk_div_ce <= 1'b0;
-			end : if_counter_lt_max_inc
+    if (i_rst_mhz) begin
+        s_clk_div_cnt <= 0;
+        s_clk_div_ce <= 1'b1;
+    end else
+        if (i_ce_mhz)
+            if (s_clk_div_cnt == c_clk_max) begin : if_counter_max_reset
+                s_clk_div_cnt <= 0;
+                s_clk_div_ce <= 1'b1;
+            end :  if_counter_max_reset
+            
+            else begin : if_counter_lt_max_inc
+                s_clk_div_cnt <= s_clk_div_cnt + 1;
+                s_clk_div_ce <= 1'b0;
+            end : if_counter_lt_max_inc
 
-		else begin : if_hold_ce_low
-			s_clk_div_cnt <= s_clk_div_cnt;
-			s_clk_div_ce <= 1'b0;
-		end : if_hold_ce_low
+        else begin : if_hold_ce_low
+            s_clk_div_cnt <= s_clk_div_cnt;
+            s_clk_div_ce <= 1'b0;
+        end : if_hold_ce_low
 
 end : p_clk_div_cnt
 
