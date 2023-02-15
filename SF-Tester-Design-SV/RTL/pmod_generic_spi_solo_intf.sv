@@ -32,51 +32,51 @@
 `begin_keywords "1800-2012"
 //------------------------------------------------------------------------------
 interface pmod_generic_spi_solo_intf #(
-	parameter integer parm_tx_len_bits = 11,
-	/* LOG2 of max Wait Cycles count between end of TX and start of RX */
-	integer parm_wait_cyc_bits = 2,
-	/* LOG2 of the RX FIFO max count */
-	integer parm_rx_len_bits = 11 /* now ignored due to usage of MACRO */
-	) ();
+    parameter integer parm_tx_len_bits = 11,
+    // LOG2 of max Wait Cycles count between end of TX and start of RX
+    integer parm_wait_cyc_bits = 2,
+    // LOG2 of the RX FIFO max count
+    integer parm_rx_len_bits = 11 // now ignored due to usage of MACRO
+    ) ();
 
-	timeunit 1ns;
-	timeprecision 1ps;
+    timeunit 1ns;
+    timeprecision 1ps;
 
-	/* system interface to the \ref pmod_generic_spi_solo module. */
-	logic go_stand;
-	logic spi_idle;
-	logic [(parm_tx_len_bits - 1):0] tx_len;
-	logic [(parm_wait_cyc_bits - 1):0] wait_cyc;
-	logic [(parm_rx_len_bits - 1):0] rx_len;
+    // system interface to the \ref pmod_generic_spi_solo module.
+    logic go_stand;
+    logic spi_idle;
+    logic [(parm_tx_len_bits - 1):0] tx_len;
+    logic [(parm_wait_cyc_bits - 1):0] wait_cyc;
+    logic [(parm_rx_len_bits - 1):0] rx_len;
 
-	/* TX FIFO interface to the \ref pmod_generic_spi_solo module. */
-	logic [7:0] tx_data;
-	logic tx_enqueue;
-	logic tx_ready;
+    // TX FIFO interface to the \ref pmod_generic_spi_solo module.
+    logic [7:0] tx_data;
+    logic tx_enqueue;
+    logic tx_ready;
 
-	/* RX FIFO interface to the \ref pmod_generic_spi_solo module. */
-	logic [7:0] rx_data;
-	logic rx_dequeue;
-	logic rx_valid;
-	logic rx_avail;
+    // RX FIFO interface to the \ref pmod_generic_spi_solo module.
+    logic [7:0] rx_data;
+    logic rx_dequeue;
+    logic rx_valid;
+    logic rx_avail;
 
-	modport spi_solo (
-		input go_stand,
-		output spi_idle,
-		input tx_len, wait_cyc, rx_len,
-		input tx_data, tx_enqueue,
-		output tx_ready, rx_data,
-		input rx_dequeue,
-		output rx_valid, rx_avail);
+    modport spi_solo (
+        input go_stand,
+        output spi_idle,
+        input tx_len, wait_cyc, rx_len,
+        input tx_data, tx_enqueue,
+        output tx_ready, rx_data,
+        input rx_dequeue,
+        output rx_valid, rx_avail);
 
-	modport spi_sysdrv (
-		output go_stand,
-		input spi_idle,
-		output tx_len, wait_cyc, rx_len,
-		output tx_data, tx_enqueue,
-		input tx_ready, rx_data,
-		output rx_dequeue,
-		input rx_valid, rx_avail);
+    modport spi_sysdrv (
+        output go_stand,
+        input spi_idle,
+        output tx_len, wait_cyc, rx_len,
+        output tx_data, tx_enqueue,
+        input tx_ready, rx_data,
+        output rx_dequeue,
+        input rx_valid, rx_avail);
 
 endinterface : pmod_generic_spi_solo_intf
 //------------------------------------------------------------------------------
