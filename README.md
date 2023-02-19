@@ -13,6 +13,9 @@ Now with support for:
 Note that this project is kept as a intermediate-level design that students, hobbyists, and
 FPGA enthusiasts may find interesting.
 
+Note that clerical corrections are being made in branch `bugs/various_defects`. These
+corrections include updates to comments, commenting style, and whitespace.
+
 ## Description
 A small FPGA project of different implementations for testing a N25Q Serial Flash.
 Status is displayed in abbreviated text on a 16x2 character LCD,
