@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------------------
 -- MIT License
 --
--- Copyright (c) 2022 Timothy Stotts
+-- Copyright (c) 2022-2023 Timothy Stotts
 --
 -- Permission is hereby granted, free of charge, to any person obtaining a copy
 -- of this software and associated documentation files (the "Software"), to deal
@@ -87,7 +87,8 @@ module sf_tester_fsm
 timeunit 1ns;
 timeprecision 1ps;
 
-// Maximum count is three seconds c_FCLK / c_sf3_tester_ce_div_ratio * 3 - 1;
+// Maximum count is three seconds parm_FCLK / parm_sf3_tester_ce_div_ratio * 3 - 1
+// for hardaware execution.
 localparam integer c_t_max = fn_set_t_max(parm_FCLK, parm_sf3_tester_ce_div_ratio, parm_fast_simulation);
 
 // Timer variable
@@ -545,7 +546,7 @@ begin : p_tester_fsm_comb
             o_sf3_cmd_random_read     = 1'b0;
             o_sf3_cmd_page_program    = 1'b0;
             o_sf3_cmd_erase_subsector = 1'b1;
-            o_sf3_address_of_cmd      = 
+            o_sf3_address_of_cmd      =
                 s_addr_start_aux + (s_i_aux * c_sf3_subsector_addr_incr);
 
             if (! i_sf3_command_ready)
@@ -642,7 +643,7 @@ begin : p_tester_fsm_comb
                 o_sf3_wr_data_valid  = 1'b1;
 
                 // Calculate the next iterations byte value
-                s_pattern_track_val = 
+                s_pattern_track_val =
                     s_pattern_track_aux + s_pattern_incrval_aux;
 
                 // Increment counter for next byte
@@ -765,7 +766,7 @@ begin : p_tester_fsm_comb
 
                 // Check current bytes counter for next FSM state
                 if (s_dat_rd_cntidx_aux == 255)
-                    // Wrote bytes 0 through 255, totaling at a page lenth
+                    // Read bytes 0 through 255, totaling at a page lenth
                     // of 256 bytes. Now advance to the WAIT state.
                     s_tester_nx_state = ST_CMD_READ_WAIT;
                 else
@@ -830,7 +831,7 @@ begin : p_tester_fsm_comb
 
         default: begin // ST_DISPLAY_FINAL
             // Compare the auxiliary register error count to zero and set
-            // the auxiliary register test done to either true or false.
+            // the auxiliary register Test Pass to either true or false.
             // Wait for the timer to reach its maximum (3 seconds) and then
             // transition to the Wait for Button or Switch.
             o_sf3_len_random_read     = 0;
