@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------------------
 -- MIT License
 --
--- Copyright (c) 2022 Timothy Stotts
+-- Copyright (c) 2022-2023 Timothy Stotts
 --
 -- Permission is hereby granted, free of charge, to any person obtaining a copy
 -- of this software and associated documentation files (the "Software"), to deal
@@ -78,15 +78,14 @@ logic [7:0] s_txt_ascii_errcntdec_char5;
 logic [7:0] s_txt_ascii_errcntdec_char6;
 logic [7:0] s_txt_ascii_errcntdec_char7;
 
-logic [$clog2(parm_max_possible_byte_count)-1:0] s_error_count;
-// logic [3:0] s_sf3_err_count_divide7;
-// logic [3:0] s_sf3_err_count_divide6;
-// logic [3:0] s_sf3_err_count_divide5;
-// logic [3:0] s_sf3_err_count_divide4;
-// logic [3:0] s_sf3_err_count_divide3;
-// logic [3:0] s_sf3_err_count_divide2;
-// logic [3:0] s_sf3_err_count_divide1;
-// logic [3:0] s_sf3_err_count_divide0;
+logic [3:0] s_sf3_err_count_divide7;
+logic [3:0] s_sf3_err_count_divide6;
+logic [3:0] s_sf3_err_count_divide5;
+logic [3:0] s_sf3_err_count_divide4;
+logic [3:0] s_sf3_err_count_divide3;
+logic [3:0] s_sf3_err_count_divide2;
+logic [3:0] s_sf3_err_count_divide1;
+logic [3:0] s_sf3_err_count_divide0;
 logic [3:0] s_sf3_err_count_digit7;
 logic [3:0] s_sf3_err_count_digit6;
 logic [3:0] s_sf3_err_count_digit5;
@@ -102,7 +101,7 @@ logic [16*8-1:0] s_txt_ascii_line2;
 
 //Part 3: Statements------------------------------------------------------------
 
-// Assembly of LCD 16x2 text lines
+// This module: Assembly of LCD 16x2 text lines
 
 // The single character to display if the pattern matches A, B, C, or D.
 assign s_txt_ascii_pattern_1char =
@@ -180,19 +179,17 @@ end : p_sf3mode_3char
 // Registering the error count digits to close timing delays.
 // This process converts the Error Count input into a 8-digit decimal ASCII
 // number.
+assign s_sf3_err_count_divide7 = i_error_count / 10000000 % 10;
+assign s_sf3_err_count_divide6 = i_error_count / 1000000 % 10;
+assign s_sf3_err_count_divide5 = i_error_count / 100000 % 10;
+assign s_sf3_err_count_divide4 = i_error_count / 10000 % 10;
+assign s_sf3_err_count_divide3 = i_error_count / 1000 % 10;
+assign s_sf3_err_count_divide2 = i_error_count / 100 % 10;
+assign s_sf3_err_count_divide1 = i_error_count / 10 % 10;
+assign s_sf3_err_count_divide0 = i_error_count % 10;
+
 always_ff @(posedge i_clk_40mhz)
 begin : p_reg_errcnt_digits
-    s_error_count <= i_error_count;
-
-    s_sf3_err_count_digit7 <= s_error_count / 10000000 % 10;
-    s_sf3_err_count_digit6 <= s_error_count / 1000000 % 10;
-    s_sf3_err_count_digit5 <= s_error_count / 100000 % 10;
-    s_sf3_err_count_digit4 <= s_error_count / 10000 % 10;
-    s_sf3_err_count_digit3 <= s_error_count / 1000 % 10;
-    s_sf3_err_count_digit2 <= s_error_count / 100 % 10;
-    s_sf3_err_count_digit1 <= s_error_count / 10 % 10;
-    s_sf3_err_count_digit0 <= s_error_count % 10;
-
     s_txt_ascii_errcntdec_char7 <= ascii_of_hdigit(s_sf3_err_count_digit7);
     s_txt_ascii_errcntdec_char6 <= ascii_of_hdigit(s_sf3_err_count_digit6);
     s_txt_ascii_errcntdec_char5 <= ascii_of_hdigit(s_sf3_err_count_digit5);
@@ -201,6 +198,15 @@ begin : p_reg_errcnt_digits
     s_txt_ascii_errcntdec_char2 <= ascii_of_hdigit(s_sf3_err_count_digit2);
     s_txt_ascii_errcntdec_char1 <= ascii_of_hdigit(s_sf3_err_count_digit1);
     s_txt_ascii_errcntdec_char0 <= ascii_of_hdigit(s_sf3_err_count_digit0);
+
+    s_sf3_err_count_digit7 <= s_sf3_err_count_divide7;
+    s_sf3_err_count_digit6 <= s_sf3_err_count_divide6;
+    s_sf3_err_count_digit5 <= s_sf3_err_count_divide5;
+    s_sf3_err_count_digit4 <= s_sf3_err_count_divide4;
+    s_sf3_err_count_digit3 <= s_sf3_err_count_divide3;
+    s_sf3_err_count_digit2 <= s_sf3_err_count_divide2;
+    s_sf3_err_count_digit1 <= s_sf3_err_count_divide1;
+    s_sf3_err_count_digit0 <= s_sf3_err_count_divide0;
 end : p_reg_errcnt_digits
 
 // Assembly of the 8-digit error count ASCII value
