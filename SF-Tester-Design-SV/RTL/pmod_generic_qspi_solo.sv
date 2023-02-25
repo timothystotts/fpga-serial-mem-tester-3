@@ -59,10 +59,14 @@ module pmod_generic_qspi_solo
         output logic eio_hldn_dq3_o,
         input logic eio_hldn_dq3_i,
         output logic eio_hldn_dq3_t,
-        // SPI state machine clock at least 4x the SPI bus clock speed, with
+        // SPI state machine clock at least 4^N the SPI bus clock speed, with
         // synchronous reset, and the clock enable at 4x the SPI bus clock speed.
         input logic i_ext_spi_clk_x,
         input logic i_srst,
+        // Clock enable that divides i_ext_spi_clk_x further. Can be held at
+        // 1'b1 to operate the SPI bus as fast as possible, assuming that the
+        // SPI peripheral is rated to run at that speed. The SPI bus will
+        // operate at 1/4 the rate of this clock enable.
         input logic i_spi_ce_4x,
         // Interface pmod_generic_spi_solo_intf
         pmod_generic_qspi_solo_intf.qspi_solo sdrv
@@ -105,8 +109,6 @@ t_dat_state s_dat_pr_state = ST_PULSE_WAIT;
 t_dat_state s_dat_nx_state = ST_PULSE_WAIT;
 
 // Timer signals and constants
-// The value of 256+6 bytes should be double-checked with a simulation
-// or Digital Logic Analyzer.
 localparam integer c_timer_enhan_value_maximum = (256 + 6) * 8;
 localparam integer c_timer_enhan_value_bits = $clog2(c_timer_enhan_value_maximum);
 typedef logic [(c_timer_enhan_value_bits - 1):0] t_timer_enhan_value;

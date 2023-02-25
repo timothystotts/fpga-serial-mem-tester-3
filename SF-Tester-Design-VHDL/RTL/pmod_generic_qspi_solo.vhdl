@@ -54,10 +54,14 @@ entity pmod_generic_qspi_solo is
         parm_rx_len_bits : natural := 9
     );
     port(
-        -- system clock and reset, with clock being MMCM generated as 4x the
-        -- SPI bus speed
+        -- SPI state machine clock at least 4^N the SPI bus clock speed, with
+        -- synchronous reset, and the clock enable at 4x the SPI bus clock speed.
         i_ext_spi_clk_x : in std_logic;
         i_srst          : in std_logic;
+        -- Clock enable that divides i_clk_mhz further. Can be held at 1'b1 to
+        -- operate the SPI bus as fast as possible, assuming that the SPI
+        -- peripheral is rated to run at that speed. The SPI bus with operate
+        -- at 1/4 the rate of this clock enable.
         i_spi_ce_4x     : in std_logic;
         -- SPI machine system interfaces
         i_go_enhan  : in  std_logic;
@@ -108,6 +112,9 @@ architecture spi_hybrid_fsm of pmod_generic_qspi_solo is
     signal s_spi_pr_state_delayed1             : t_spi_state := ST_IDLE_ENHAN;
     signal s_spi_pr_state_delayed2             : t_spi_state := ST_IDLE_ENHAN;
     signal s_spi_pr_state_delayed3             : t_spi_state := ST_IDLE_ENHAN;
+
+    -- Xilinx attributes for gray encoding of the FSM and safe state is
+    -- Default State.
     attribute fsm_encoding                     : string;
     attribute fsm_encoding of s_spi_pr_state   : signal is "gray";
     attribute fsm_safe_state                   : string;
@@ -119,6 +126,9 @@ architecture spi_hybrid_fsm of pmod_generic_qspi_solo is
             ST_HOLD_PULSE_3);
     signal s_dat_pr_state                      : t_dat_state := ST_WAIT_PULSE;
     signal s_dat_nx_state                      : t_dat_state := ST_WAIT_PULSE;
+
+    -- Xilinx attributes for gray encoding of the FSM and safe state is
+    -- Default State.
     attribute fsm_encoding of s_dat_pr_state   : signal is "gray";
     attribute fsm_safe_state of s_dat_pr_state : signal is "default_state";
 
