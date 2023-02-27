@@ -56,7 +56,7 @@ entity pmod_sf3_custom_driver is
         -- Clock and reset, with clock at 4^N times the frequency of the SPI bus
         i_clk_mhz    : in std_logic;
         i_rst_mhz    : in std_logic;
-        -- Clock enable that divides i_clk_mhz further. Can be held at 1'b1 to
+        -- Clock enable that divides i_clk_mhz further. Can be held at '1' to
         -- operate the SPI bus as fast as possible, assuming that the SPI
         -- peripheral is rated to run at that speed. The SPI bus will operate
         -- at 1/4 the rate of this clock enable.
