@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------------------
 -- MIT License
 --
--- Copyright (c) 2020-2022 Timothy Stotts
+-- Copyright (c) 2022-2023 Timothy Stotts
 --
 -- Permission is hereby granted, free of charge, to any person obtaining a copy
 -- of this software and associated documentation files (the "Software"), to deal
@@ -22,14 +22,12 @@
 -- SOFTWARE.
 ------------------------------------------------------------------------------*/
 /**-----------------------------------------------------------------------------
--- \file fpga_serial_acl_tester_a7100.sv
+-- \file fpga_serial_mem_tester_a7100.sv
 --
--- \brief A FPGA top-level design with the PMOD ACL2 custom driver.
--- This design operates the ADXL362 in one of multiple possible operational
--- modes for Accelerometer data capture. The PMOD CLS is used to display raw
--- data for: X-Axis, Y-Axis, Z-Axis, Temperature. Color and basic LEDs
--- are used to display additional information, including Activity and Inactivity
--- motion detection.
+-- \brief A FPGA top-level design with the PMOD SF3 custom driver.
+-- This design erases a subsector, programs the subsector, and then byte
+-- compares the contents of the subsector. The data is displayed on a PMOD
+-- CLS 16x2 dot-matrix LCD.
 ------------------------------------------------------------------------------*/
 //------------------------------------------------------------------------------
 `begin_keywords "1800-2012"
@@ -39,68 +37,66 @@ module fpga_serial_mem_tester_a7100
   import pmod_stand_spi_solo_pkg::*;
   import pmod_quad_spi_solo_pkg::*;
   import sf_tester_fsm_pkg::*;
-	#(parameter
-		integer parm_fast_simulation = 0)
-	(
-  // external clock and active-low reset 
-	input logic CLK100MHZ,
-	input logic i_resetn,
-	// PMOD ACL2 SPI bus 4-wire and two interrupt signals
-	output logic eo_pmod_sf3_sck,
-	output logic eo_pmod_sf3_csn,
-	inout logic eio_pmod_sf3_copi_dq0,
-	inout logic eio_pmod_sf3_cipo_dq1,
-  inout logic eio_pmod_sf3_wrpn_dq2,
-  inout logic eio_pmod_sf3_hldn_dq3,
-	// blue LEDs of the multicolor
-	output logic eo_led0_b,
-	output logic eo_led1_b,
-	output logic eo_led2_b,
-	output logic eo_led3_b,
-	// red LEDs of the multicolor
-	output logic eo_led0_r,
-	output logic eo_led1_r,
-	output logic eo_led2_r,
-	output logic eo_led3_r,
-	// green LEDs of the multicolor
-	output logic eo_led0_g,
-	output logic eo_led1_g,
-	output logic eo_led2_g,
-	output logic eo_led3_g,
-	// green LEDs of the regular LEDs
-	output logic eo_led4,
-	output logic eo_led5,
-	output logic eo_led6,
-	output logic eo_led7,
-	// four switches
-	input logic ei_sw0,
-	input logic ei_sw1,
-	input logic ei_sw2,
-	input logic ei_sw3,
-	// four buttons
-	input logic ei_bt0,
-	input logic ei_bt1,
-	input logic ei_bt2,
-	input logic ei_bt3,
-	// PMOD CLS SPI bus 4-wire
-	output logic eo_pmod_cls_csn,
-	output logic eo_pmod_cls_sck,
-	output logic eo_pmod_cls_dq0,
-	input logic ei_pmod_cls_dq1,
-	// Arty A7-100T UART TX and RX signals
-	output logic eo_uart_tx,
-	input logic ei_uart_rx);
+    #(parameter
+        integer parm_fast_simulation = 0)
+    (
+    // External clock and active-low reset
+    input logic CLK100MHZ,
+    input logic i_resetn,
+    // PMOD SF3 Quad SPI
+    output logic eo_pmod_sf3_sck,
+    output logic eo_pmod_sf3_csn,
+    inout logic eio_pmod_sf3_copi_dq0,
+    inout logic eio_pmod_sf3_cipo_dq1,
+    inout logic eio_pmod_sf3_wrpn_dq2,
+    inout logic eio_pmod_sf3_hldn_dq3,
+    // blue emitters of the multicolor LEDs
+    output logic eo_led0_b,
+    output logic eo_led1_b,
+    output logic eo_led2_b,
+    output logic eo_led3_b,
+    // red emitters of the multicolor LEDs
+    output logic eo_led0_r,
+    output logic eo_led1_r,
+    output logic eo_led2_r,
+    output logic eo_led3_r,
+    // green emitters of the multicolor LEDs
+    output logic eo_led0_g,
+    output logic eo_led1_g,
+    output logic eo_led2_g,
+    output logic eo_led3_g,
+    // green emitters of the regular LEDs
+    output logic eo_led4,
+    output logic eo_led5,
+    output logic eo_led6,
+    output logic eo_led7,
+    // four switches
+    input logic ei_sw0,
+    input logic ei_sw1,
+    input logic ei_sw2,
+    input logic ei_sw3,
+    // four buttons
+    input logic ei_bt0,
+    input logic ei_bt1,
+    input logic ei_bt2,
+    input logic ei_bt3,
+    // PMOD CLS SPI bus 4-wire
+    output logic eo_pmod_cls_csn,
+    output logic eo_pmod_cls_sck,
+    output logic eo_pmod_cls_dq0,
+    input logic ei_pmod_cls_dq1,
+    // Arty A7-100T UART TX and RX signals
+    output logic eo_uart_tx,
+    input logic ei_uart_rx);
 
 //Part 2: Declarations----------------------------------------------------------
 timeunit 1ns;
 timeprecision 1ps;
 
-// Disable or enable fast FSM delays for simulation instead of impelementation. 
+// Frequency of the clk_out1 clock output
 localparam integer c_FCLK = 40000000;
 
-// MMCM and Processor System Reset signals for PLL clock generation from the
-// Clocking Wizard and Synchronous Reset generation from the Processor System
-// Reset module. 
+// MMCM clocks and Synchronized Resets signals
 logic s_mmcm_locked;
 logic s_clk_40mhz;
 logic s_rst_40mhz;
@@ -110,7 +106,7 @@ logic s_cls_ce_mhz;
 logic s_sf3_ce_div;
 
 // Extra MMCM signals for full port map to the MMCM primative,
-// where these signals will remain disconnected. 
+// where these signals will remain disconnected.
 logic s_clk_ignore_clk0b;
 logic s_clk_ignore_clk1b;
 logic s_clk_ignore_clk2;
@@ -121,11 +117,13 @@ logic s_clk_ignore_clk4;
 logic s_clk_ignore_clk5;
 logic s_clk_ignore_clk6;
 logic s_clk_ignore_clkfboutb;
+// Extra MMCM signals for full port map to the MMCM primative, where
+// these signals are connected.
 logic s_clk_clkfbout;
 logic s_clk_pwrdwn;
 logic s_clk_resetin;
 
-// SPI signals to external tri-state
+// SPI signals to/from external tri-state
 logic sio_sf3_sck_o;
 logic sio_sf3_sck_t;
 logic sio_sf3_csn_o;
@@ -171,7 +169,7 @@ logic [(16*8-1):0] s_cls_txt_ascii_line1;
 logic [(16*8-1):0] s_cls_txt_ascii_line2;
 logic s_cls_feed_is_idle;
 
-// Connections for inferring tri-state buffer for CLS SPI bus outputs. 
+// Connections for inferring tri-state buffer for CLS SPI bus outputs.
 logic so_pmod_cls_sck_o;
 logic so_pmod_cls_sck_t;
 logic so_pmod_cls_csn_o;
@@ -179,11 +177,11 @@ logic so_pmod_cls_csn_t;
 logic so_pmod_cls_copi_o;
 logic so_pmod_cls_copi_t;
 
-// switch inputs debounced 
+// switch inputs debounced
 logic [3:0] si_switches;
 logic [3:0] s_sw_deb;
 
-// switch inputs debounced 
+// button inputs debounced
 logic [3:0] si_buttons;
 logic [3:0] s_btns_deb;
 
@@ -200,13 +198,13 @@ logic s_sf3_test_pass;
 logic s_sf3_test_done;
 
 // Color palette signals to connect \ref led_palette_pulser to \ref
-// led_pwm_driver . 
+// led_pwm_driver .
 logic [(4*8-1):0] s_color_led_red_value;
 logic [(4*8-1):0] s_color_led_green_value;
 logic [(4*8-1):0] s_color_led_blue_value;
 logic [(4*8-1):0] s_basic_led_lumin_value;
 
-/* UART TX signals to connect \ref uart_tx_only and \ref uart_tx_feed */
+// UART TX signals to connect \ref uart_tx_only and \ref uart_tx_feed
 logic [(35*8-1):0] s_uart_txt_ascii_line;
 logic s_uart_tx_go;
 logic [7:0] s_uart_txdata;
@@ -215,7 +213,7 @@ logic s_uart_txready;
 
 //Part 3: Statements------------------------------------------------------------
 assign s_clk_pwrdwn = 1'b0;
-assign s_clk_resetin = (! i_resetn);
+assign s_clk_resetin = (~ i_resetn);
 
 // MMCME2_BASE: Base Mixed Mode Clock Manager
 //              Artix-7
@@ -284,19 +282,19 @@ MMCME2_BASE_inst (
 
 // End of MMCME2_BASE_inst instantiation
 
-// Reset Synchronization for 40 MHz clock. 
+// Reset Synchronization for 40 MHz clock.
 arty_reset_synchronizer #() u_reset_synch_40mhz(
-	.i_clk_mhz(s_clk_40mhz),
-	.i_rstn_global(i_resetn),
-	.o_rst_mhz(s_rst_40mhz)
-	);
+    .i_clk_mhz(s_clk_40mhz),
+    .i_rstn_global(i_resetn),
+    .o_rst_mhz(s_rst_40mhz)
+    );
 
-// Reset Synchronization for 7.37 MHz clock. 
+// Reset Synchronization for 7.37 MHz clock.
 arty_reset_synchronizer #() u_reset_synch_7_37mhz (
-	.i_clk_mhz(s_clk_7_37mhz),
-	.i_rstn_global(i_resetn),
-	.o_rst_mhz(s_rst_7_37mhz)
-	);
+    .i_clk_mhz(s_clk_7_37mhz),
+    .i_rstn_global(i_resetn),
+    .o_rst_mhz(s_rst_7_37mhz)
+    );
 
 // Color and Basic LED operation by 8-bit scalar per emitter
 led_pwm_driver #(
@@ -324,10 +322,10 @@ led_pwm_driver #(
 clock_enable_divider #(
   .par_ce_divisor(c_cls_display_ce_div_ratio)
   ) u_cls_ce_divider (
-	.o_ce_div(s_cls_ce_mhz),
-	.i_clk_mhz(s_clk_40mhz),
-	.i_rst_mhz(s_rst_40mhz),
-	.i_ce_mhz(1'b1));
+    .o_ce_div(s_cls_ce_mhz),
+    .i_clk_mhz(s_clk_40mhz),
+    .i_rst_mhz(s_rst_40mhz),
+    .i_ce_mhz(1'b1));
 
 // 4x spi clock enable divider for PMOD SF3 SCK output. No
 // generated clock constraint. The 40 MHz clock is divided
@@ -561,8 +559,6 @@ lcd_text_feed #(
 
 // TX ONLY UART function to print the two lines of the PMOD CLS output as a
 // single line on the dumb terminal, at the same rate as the PMOD CLS updates.
-// Assembly of UART text line.
-
 assign s_uart_tx_go = s_cls_wr_clear_display;
 
 uart_tx_only #(
