@@ -85,7 +85,7 @@ module fpga_serial_mem_tester_a7100
     output logic eo_pmod_cls_sck,
     output logic eo_pmod_cls_dq0,
     input logic ei_pmod_cls_dq1,
-    // Arty A7-100T UART TX and RX signals
+    // Arty A7-100 UART TX and RX signals
     output logic eo_uart_tx,
     input logic ei_uart_rx);
 
@@ -461,7 +461,7 @@ assign sio_sf3_wrpn_dq2_i = eio_pmod_sf3_wrpn_dq2;
 assign eio_pmod_sf3_hldn_dq3 = sio_sf3_hldn_dq3_t ? 1'bz : sio_sf3_hldn_dq3_o;
 assign sio_sf3_hldn_dq3_i = eio_pmod_sf3_hldn_dq3;
 
-/* Tester FSM to operate the states of the Pmod SF3 based on user input */
+// SF3 Tester FSM
 sf_tester_fsm #(
   .parm_fast_simulation(parm_fast_simulation),
   .parm_FCLK(c_FCLK),

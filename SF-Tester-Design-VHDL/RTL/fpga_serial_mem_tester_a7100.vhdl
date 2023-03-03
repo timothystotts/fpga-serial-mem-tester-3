@@ -93,7 +93,7 @@ entity fpga_serial_mem_tester_a7100 is
         eo_pmod_cls_sck : out std_logic;
         eo_pmod_cls_dq0 : out std_logic;
         ei_pmod_cls_dq1 : in  std_logic;
-        -- Arty A7-100T UART TX and RX signals
+        -- Arty A7-100 UART TX and RX signals
         eo_uart_tx : out std_logic;
         ei_uart_rx : in  std_logic
     );

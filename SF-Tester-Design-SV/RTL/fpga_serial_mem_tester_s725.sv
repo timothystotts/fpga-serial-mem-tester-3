@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------------------
 -- MIT License
 --
--- Copyright (c) 2020-2022 Timothy Stotts
+-- Copyright (c) 2022-2023 Timothy Stotts
 --
 -- Permission is hereby granted, free of charge, to any person obtaining a copy
 -- of this software and associated documentation files (the "Software"), to deal
@@ -42,26 +42,26 @@ module fpga_serial_mem_tester_s725
     #(parameter
         integer parm_fast_simulation = 0)
     (
-  // external clock and active-low reset 
+    // External clock and active-low reset
     input logic CLK12MHZ,
     input logic i_resetn,
-    // PMOD ACL2 SPI bus 4-wire and two interrupt signals
+    // PMOD SF3 Quad SPI
     output logic eo_pmod_sf3_sck,
     output logic eo_pmod_sf3_csn,
     inout logic eio_pmod_sf3_copi_dq0,
     inout logic eio_pmod_sf3_cipo_dq1,
     inout logic eio_pmod_sf3_wrpn_dq2,
     inout logic eio_pmod_sf3_hldn_dq3,
-    // blue LEDs of the multicolor
+    // blue emitters of the multicolor LEDs
     output logic eo_led0_b,
     output logic eo_led1_b,
-    // red LEDs of the multicolor
+    // red emitters of the multicolor LEDs
     output logic eo_led0_r,
     output logic eo_led1_r,
-    // green LEDs of the multicolor
+    // green emitters of the multicolor LEDs
     output logic eo_led0_g,
     output logic eo_led1_g,
-    // green LEDs of the regular LEDs
+    // green emitters of the regular LEDs
     output logic eo_led2,
     output logic eo_led3,
     output logic eo_led4,
@@ -89,12 +89,10 @@ module fpga_serial_mem_tester_s725
 timeunit 1ns;
 timeprecision 1ps;
 
-// Disable or enable fast FSM delays for simulation instead of impelementation. 
+// Disable or enable fast FSM delays for simulation instead of impelementation.
 localparam integer c_FCLK = 40000000;
 
-// MMCM and Processor System Reset signals for PLL clock generation from the
-// Clocking Wizard and Synchronous Reset generation from the Processor System
-// Reset module. 
+// MMCM clocks and Synchronized Resets signals
 logic s_mmcm_locked;
 logic s_clk_40mhz;
 logic s_rst_40mhz;
@@ -104,7 +102,7 @@ logic s_cls_ce_mhz;
 logic s_sf3_ce_div;
 
 // Extra MMCM signals for full port map to the MMCM primative,
-// where these signals will remain disconnected. 
+// where these signals will remain disconnected.
 logic s_clk_ignore_clk0b;
 logic s_clk_ignore_clk1b;
 logic s_clk_ignore_clk2;
@@ -115,11 +113,13 @@ logic s_clk_ignore_clk4;
 logic s_clk_ignore_clk5;
 logic s_clk_ignore_clk6;
 logic s_clk_ignore_clkfboutb;
+// Extra MMCM signals for full port map to the MMCM primative, where
+// these signals are connected.
 logic s_clk_clkfbout;
 logic s_clk_pwrdwn;
 logic s_clk_resetin;
 
-// SPI signals to external tri-state
+// SPI signals to/from external tri-state
 logic sio_sf3_sck_o;
 logic sio_sf3_sck_t;
 logic sio_sf3_csn_o;
@@ -165,7 +165,7 @@ logic [(16*8-1):0] s_cls_txt_ascii_line1;
 logic [(16*8-1):0] s_cls_txt_ascii_line2;
 logic s_cls_feed_is_idle;
 
-// Connections for inferring tri-state buffer for CLS SPI bus outputs. 
+// Connections for inferring tri-state buffer for CLS SPI bus outputs.
 logic so_pmod_cls_sck_o;
 logic so_pmod_cls_sck_t;
 logic so_pmod_cls_csn_o;
@@ -173,11 +173,11 @@ logic so_pmod_cls_csn_t;
 logic so_pmod_cls_copi_o;
 logic so_pmod_cls_copi_t;
 
-// switch inputs debounced 
+// switch inputs debounced
 logic [3:0] si_switches;
 logic [3:0] s_sw_deb;
 
-// switch inputs debounced 
+// switch inputs debounced
 logic [3:0] si_buttons;
 logic [3:0] s_btns_deb;
 
@@ -194,13 +194,13 @@ logic s_sf3_test_pass;
 logic s_sf3_test_done;
 
 // Color palette signals to connect \ref led_palette_pulser to \ref
-// led_pwm_driver . 
+// led_pwm_driver .
 logic [(2*8-1):0] s_color_led_red_value;
 logic [(2*8-1):0] s_color_led_green_value;
 logic [(2*8-1):0] s_color_led_blue_value;
 logic [(4*8-1):0] s_basic_led_lumin_value;
 
-/* UART TX signals to connect \ref uart_tx_only and \ref uart_tx_feed */
+// UART TX signals to connect \ref uart_tx_only and \ref uart_tx_feed
 logic [(35*8-1):0] s_uart_txt_ascii_line;
 logic s_uart_tx_go;
 logic [7:0] s_uart_txdata;
@@ -278,14 +278,14 @@ MMCME2_BASE_inst (
 
 // End of MMCME2_BASE_inst instantiation
 
-// Reset Synchronization for 40 MHz clock. 
+// Reset Synchronization for 40 MHz clock.
 arty_reset_synchronizer #() u_reset_synch_40mhz(
     .i_clk_mhz(s_clk_40mhz),
     .i_rstn_global(i_resetn),
     .o_rst_mhz(s_rst_40mhz)
     );
 
-// Reset Synchronization for 7.37 MHz clock. 
+// Reset Synchronization for 7.37 MHz clock.
 arty_reset_synchronizer #() u_reset_synch_7_37mhz (
     .i_clk_mhz(s_clk_7_37mhz),
     .i_rstn_global(i_resetn),
@@ -457,7 +457,7 @@ assign sio_sf3_wrpn_dq2_i = eio_pmod_sf3_wrpn_dq2;
 assign eio_pmod_sf3_hldn_dq3 = sio_sf3_hldn_dq3_t ? 1'bz : sio_sf3_hldn_dq3_o;
 assign sio_sf3_hldn_dq3_i = eio_pmod_sf3_hldn_dq3;
 
-/* Tester FSM to operate the states of the Pmod SF3 based on user input */
+// SF3 Tester FSM
 sf_tester_fsm #(
   .parm_fast_simulation(parm_fast_simulation),
   .parm_FCLK(c_FCLK),
@@ -555,8 +555,6 @@ lcd_text_feed #(
 
 // TX ONLY UART function to print the two lines of the PMOD CLS output as a
 // single line on the dumb terminal, at the same rate as the PMOD CLS updates.
-// Assembly of UART text line.
-
 assign s_uart_tx_go = s_cls_wr_clear_display;
 
 uart_tx_only #(
