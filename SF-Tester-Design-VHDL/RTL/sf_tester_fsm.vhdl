@@ -196,6 +196,8 @@ architecture rtl of sf_tester_fsm is
     signal s_start_at_zero_aux   : std_logic;
     signal s_i_val               : natural range 0 to c_tester_page_cnt_per_iter;
     signal s_i_aux               : natural range 0 to c_tester_page_cnt_per_iter;
+
+    constant c_force_fake_errors : boolean := false;
 begin
     -- Outputs for other modules to read
     o_tester_pr_state <= s_tester_pr_state;
@@ -861,9 +863,9 @@ begin
                     -- Compare this iterations byte value
                     if (i_sf3_rd_data_stream /= s_pattern_track_aux) then
                         s_err_count_val <= s_err_count_aux + 1;
-                    else
-                        -- FIXME: this is to show errors that did not occur to test the error reporting on the LCD and USB=UART
-                        s_err_count_val <= s_err_count_aux + 0;
+                    elsif (c_force_fake_errors and (i_sf3_rd_data_stream = x"07")) then
+                        -- If c_force_fake_errors is non-zero, then fake errors are injected.
+                        s_err_count_val <= s_err_count_aux + 2;
                     end if;
 
                     -- Calculate the next iterations byte value
