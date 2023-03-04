@@ -19,8 +19,9 @@ Now with support for:
 Note that this project is kept as a intermediate-level design that students, hobbyists, and
 FPGA enthusiasts may find interesting.
 
-Note that clerical corrections are being made in branch `bugs/various_defects`. These
-corrections include updates to comments, commenting style, and whitespace.
+Note that clerical corrections and slight optimizations were completed in
+branch `bugs/various_defects` and merged to branch `main`. These corrections
+include updates to comments, commenting style, and whitespace, and RTL style.
 
 ## Description
 A small FPGA project of different implementations for testing a N25Q Serial Flash.
