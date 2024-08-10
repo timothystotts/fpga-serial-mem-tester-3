@@ -27,6 +27,9 @@ Notes:
 - The MicroBlaze example followed this tutorial as a starting point:
 - [https://digilent.com/reference/learn/programmable-logic/tutorials/arty-getting-started-with-microblaze-servers/start](https://digilent.com/reference/learn/programmable-logic/tutorials/arty-getting-started-with-microblaze-servers/start)
 - Note that the MicroBlaze example requires Xilinx Vivado 2021.2. The DDR MIG is driven by two MMCM clocks in a way that is possibly incompatible with newer versions of Vivado. Newer versions of Vivado may require a revised block design to achieve a functional design.
+- Board part install scripts are now provided in the top directory. They require manual path modification prior to execution. Choose a Windows or Linux path and update it.
+- The project init scripts may have failed prior on some systems. It is required to install the board part first with an install_ script. And the init_ scripts were modified on 2024-08-10 to not use checkpoints or set the board repo path. This solves Vivado looking for paths that do not exist on other systems.
+- The three block design examples requrie a right-click for adding a system wrapper. First generate the block design with the IPI-BD script. Then right-click on the block design under source and select generate an HDL wrapper. This is required prior to synthesis.
 
 ## Description
 A small FPGA project of different implementations for testing a N25Q Serial Flash.

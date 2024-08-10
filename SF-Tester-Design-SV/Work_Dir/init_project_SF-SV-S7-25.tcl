@@ -186,7 +186,7 @@ set proj_dir [get_property directory [current_project]]
 
 # Set project properties
 set obj [current_project]
-set_property -name "board_part_repo_paths" -value "[file normalize "$origin_dir/../../../../../../../.Xilinx/Vivado/2021.2/xhub/board_store/xilinx_board_store"]" -objects $obj
+#set_property -name "board_part_repo_paths" -value "[file normalize "$origin_dir/../../../../../../../.Xilinx/Vivado/2021.2/xhub/board_store/xilinx_board_store"]" -objects $obj
 set_property -name "board_part" -value "digilentinc.com:arty-s7-25:part0:1.0" -objects $obj
 set_property -name "default_lib" -value "xil_defaultlib" -objects $obj
 set_property -name "enable_vhdl_2008" -value "1" -objects $obj
@@ -458,7 +458,7 @@ if { $obj != "" } {
 }
 set obj [get_runs synth_1]
 set_property -name "needs_refresh" -value "1" -objects $obj
-set_property -name "auto_incremental_checkpoint" -value "1" -objects $obj
+set_property -name "auto_incremental_checkpoint" -value "0" -objects $obj
 set_property -name "strategy" -value "Vivado Synthesis Defaults" -objects $obj
 
 # set the current synth run
